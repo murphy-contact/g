@@ -1,14 +1,13 @@
 # g
 
-The Mulligans Bar Golf Society Captain's Day pages, served by GitHub Pages.
+The Mulligan's Bar Golf Society Captain's Day draw sheet, served by GitHub Pages
+at [mulligansbar.online](https://mulligansbar.online/).
 
-- `index.html` — landing page
-- `draw.html` — tee sheet, both sides, and the shots in every match
-- `live.html` — Cup board and Wooden Spoon standings
+- `index.html` — the whole thing: tee sheet, both sides, and the shots in every match
+- `draw.html` — a redirect to `/`, so links shared before the restructure still work
 
 Static HTML, no build step. Pages serves this repo from `main` at the root.
-The pages carry `noindex` so search engines skip them; the link still works
-for anyone it is sent to.
+The page carries `noindex` so search engines skip it; the link still works for
+anyone it is sent to.
 
-Generated from the working copies in `murphy-contact/golf-society-fe` under
-`docs/`. Edit there, copy here, or edit here directly.
+The small print opens with an "As of ..." stamp that is refreshed on every push.
