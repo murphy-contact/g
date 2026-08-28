@@ -15,19 +15,20 @@ img { max-width: 100%; }
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
 :root {
-  --paper:  #f7f6f0;
-  --sunk:   #eceade;
-  --ink:    #191b16;
-  --soft:   #62655a;
-  --hair:   #d8d6c8;
-  --navy:   #10314f;
-  --home:   #124bb8;
-  --away:   #b31942;
-  --away-rule: #b31942;
-  --gold:   #e1bd29;
-  --band:   #10314f;
-  --band-ink: #f2f1e8;
-  --swatch-edge: rgba(25, 27, 22, 0.28);
+  --paper:  #f3e9d2;
+  --sunk:   #eaddbd;
+  --ink:    #16242e;
+  --soft:   #5f6b70;
+  --hair:   #d5c5a2;
+  --navy:   #0c2f42;
+  --home:   #1a6b96;
+  --away:   #b53a1c;
+  --away-rule: #b53a1c;
+  --gold:   #c38921;
+  --band:   #0c2f42;
+  --band-ink: #f3e9d2;
+  --bar-ink: #f3e9d2;
+  --swatch-edge: rgba(22, 36, 46, 0.30);
   --pot: var(--ink);
   --pot-soft: var(--soft);
   --display: "Barlow Condensed", "Arial Narrow", sans-serif;
@@ -35,15 +36,15 @@ img { max-width: 100%; }
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #171913; --sunk: #21241c; --ink: #e9ebe2; --soft: #9a9e91;
-    --hair: #333629; --home: #5a8ede; --away: #e2637a; --away-rule: #e2637a; --band: #0c2438;
-    --swatch-edge: rgba(233, 235, 226, 0.35);
+    --paper: #111d26; --sunk: #17252f; --ink: #ecdfc4; --soft: #93a0a8;
+    --hair: #2a3b47; --home: #2b9ad6; --away: #dd6a52; --away-rule: #dd6a52; --band: #0a2635; --bar-ink: #10202a;
+    --swatch-edge: rgba(236, 223, 196, 0.35);
   }
 }
 :root[data-theme="dark"] {
-  --paper: #171913; --sunk: #21241c; --ink: #e9ebe2; --soft: #9a9e91;
-  --hair: #333629; --home: #5a8ede; --away: #e2637a; --away-rule: #e2637a; --band: #0c2438;
-    --swatch-edge: rgba(233, 235, 226, 0.35);
+  --paper: #111d26; --sunk: #17252f; --ink: #ecdfc4; --soft: #93a0a8;
+  --hair: #2a3b47; --home: #2b9ad6; --away: #dd6a52; --away-rule: #dd6a52; --band: #0a2635; --bar-ink: #10202a;
+    --swatch-edge: rgba(236, 223, 196, 0.35);
 }
 * { box-sizing: border-box; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
@@ -58,10 +59,13 @@ ol, ul { list-style: none; margin: 0; padding: 0; }
 .gm { border: 1px solid var(--hair); border-radius: 3px; color: var(--soft); display: inline-block; font-family: var(--display); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; line-height: 1; margin-left: 0.35rem; padding: 0.15rem 0.3rem 0.1rem; text-transform: uppercase; vertical-align: 0.1em; }
 
 .top { padding: 1rem 1rem 0.9rem; text-align: center; }
+.top::after { background: repeating-linear-gradient(90deg,
+    var(--away-rule) 0 16px, transparent 16px 32px);
+  content: ""; display: block; height: 4px; margin: 0.85rem auto 0; max-width: 15rem; }
 .top img.crest { display: block; height: auto; margin: 0 auto 0.5rem; width: 66.667%; }
-.top h1 { font-size: 1.85rem; font-weight: 600; letter-spacing: 0.09em; line-height: 1.15; text-indent: 0.09em; text-transform: none; }
-.top .sub { color: var(--soft); font-family: var(--display); font-size: 1rem; letter-spacing: 0.13em; text-indent: 0.13em; text-transform: none; }
-.strip { background: var(--band); color: #cdd7e2; padding: 0.7rem 1rem 0.8rem; text-align: center; }
+.top h1 { font-size: 1.85rem; font-weight: 700; letter-spacing: 0.09em; line-height: 1.15; text-indent: 0.09em; text-transform: uppercase; }
+.top .sub { color: var(--soft); font-family: var(--display); font-size: 0.92rem; letter-spacing: 0.09em; text-indent: 0.09em; text-transform: uppercase; }
+.strip { background: var(--band); color: #c9bda0; padding: 0.7rem 1rem 0.8rem; text-align: center; }
 .venue { align-items: center; display: flex; gap: 0.5rem; justify-content: center; }
 .venue img { height: 3rem; width: auto; }
 .venue span { color: var(--gold); font-family: var(--display); font-size: 1.2rem; letter-spacing: 0.1em; text-indent: 0.1em; }
@@ -130,12 +134,17 @@ ol, ul { list-style: none; margin: 0; padding: 0; }
 
 .teams { display: grid; gap: 0 1.25rem; grid-template-columns: 1fr; }
 .team { border-top: 1px solid var(--hair); scroll-margin-top: 4.2rem; }
-.team h3 { align-items: center; display: flex; font-size: 1.05rem; gap: 0.5rem; letter-spacing: 0.12em; padding: 0.7rem 1rem 0.1rem; }
+.team h3 { align-items: center; background: var(--home); color: var(--bar-ink); display: flex;
+  font-family: var(--display); font-size: 1.15rem; font-weight: 700; gap: 0.5rem;
+  letter-spacing: 0.14em; padding: 0.5rem 1rem; text-transform: uppercase; }
+.team--away h3 { background: var(--away-rule); }
+.team h3 .kit-dots span { border: 2px solid var(--bar-ink);
+  height: 0.8rem; width: 0.8rem; }
 .team--home { border-top: 3px solid var(--home); }
 .team--away { border-top: 3px solid var(--away-rule); }
-.team--home h3 { color: var(--home); }
-.team--away h3 { color: var(--away); }
-.team p.note { color: var(--soft); font-size: 0.82rem; padding: 0 1rem 0.4rem; }
+.team--home h3 { color: var(--bar-ink); }
+.team--away h3 { color: var(--bar-ink); }
+.team p.note { color: var(--soft); font-size: 0.82rem; padding: 0.5rem 1rem 0.4rem; }
 .team p.note b { color: var(--ink); font-weight: 600; }
 .kit-dots { display: inline-flex; flex: 0 0 auto; gap: 0.2rem; }
 .kit-dots span { border: 1px solid var(--swatch-edge); border-radius: 50%; height: 0.72rem; width: 0.72rem; }
@@ -406,7 +415,7 @@ details b { color: var(--ink); font-weight: 600; }
 <details>
   <summary>The small print</summary>
   <div class="body">
-    <p class="asof"><b>As of Friday, August 28th @ 8:15 AM</b></p>
+    <p class="asof"><b>As of Friday, August 28th @ 8:28 AM</b></p>
     <p><b><span class="gm" title="Guest &mdash; longest drive and closest to the pin">Guest</span> Not a society member.</b> Nine of the forty are guests. They play their matchplay as normal and their points count towards the Cup, but of the prizes they can only win <b>longest drive</b>, <b>closest to the pin</b> and, if they are eligible for it, <b>the Wooden Spoon</b>. Members are eligible for everything.</p>
     <p><b>Tee times.</b> Four a group, ten minutes apart, from 2:30 to 4:00 PM. Two matches a group.</p>
     <p><b>How the sides were split.</b> The field was ranked by handicap and dealt out to give two level sides, then players and handicaps were traded in place as they firmed up. Europe now averages <b>20.85</b>, USA <b>20.30</b>.</p>
