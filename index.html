@@ -99,6 +99,12 @@ ol, ul { list-style: none; margin: 0; padding: 0; }
 .teaser a { color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 0.15em; }
 .teaser a:hover, .teaser a:focus-visible { text-decoration-thickness: 2px; }
 #head-prizes { scroll-margin-top: 4.2rem; }
+.sp-link { color: var(--home); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+/* times sit beside the heading; the small print link takes the far right */
+#head-tees { flex-wrap: wrap; justify-content: flex-start; }
+#head-tees .sp-link { margin-left: auto; }
+.sp-link:hover, .sp-link:focus-visible { text-decoration: underline; }
+#small-print { scroll-margin-top: 4.2rem; }
 .find { background: var(--paper); border-bottom: 1px solid var(--hair); padding: 0.6rem 1rem; position: sticky; top: 0; z-index: 5; }
 .find__box { position: relative; }
 .find input {
@@ -229,7 +235,7 @@ details b { color: var(--ink); font-weight: 600; }
 </div>
 
 <p class="empty" id="empty" hidden>No one by that name &mdash; the sheet uses the names on the WhatsApp roster, so try a nickname or a first name on its own.</p>
-<div class="head" id="head-tees"><h2>Tee Sheet</h2><p>2:30 &ndash; 4:00 &middot; ten minutes apart</p></div>
+<div class="head" id="head-tees"><h2>Tee Sheet</h2><p>2:30 &ndash; 4:00 &middot; ten minutes apart</p><a class="sp-link" href="#small-print">The&nbsp;small&nbsp;print</a></div>
   <section class="slot">
     <h3 class="slot__time">2:30</h3>
     <ul class="matches">
@@ -439,12 +445,13 @@ details b { color: var(--ink); font-weight: 600; }
 </dl>
 <p class="prizes__note">Paid-up 2026 members contest everything. Guests can contest closest to the pin, longest drive and the &pound;2 pot.</p>
 
-<details>
+<details id="small-print">
   <summary>The small print</summary>
   <div class="body">
-    <p class="asof"><b>As of Sunday, September 6th @ 2:04 PM</b></p>
+    <p class="asof"><b>As of Wednesday, September 9th @ 4:06 PM</b></p>
+    <p><b>Two competitions, one card.</b> The Cup is matchplay, Europe against USA. The Stableford is every player&rsquo;s own score, for the prizes and the Spoon. Same eighteen holes, same card &mdash; both count.</p>
     <p><b>Everybody plays eighteen.</b> A match result stands the moment it is decided &mdash; 3 &amp; 2 is 3 &amp; 2 &mdash; but nobody picks up and nothing is conceded. Play out all eighteen and hand in a full card, because the same round decides the Stableford.</p>
-    <p><b>The Cup.</b> Twenty singles matches, a point for a win and a half each for a half. <b>10&frac12; of 20 takes the Cup.</b></p>
+    <p><b>The Cup.</b> Twenty singles matches, <b>two in every group of four</b>, a point for a win and a half each for a half. <b>10&frac12; of 20 takes the Cup.</b></p>
     <p><b>The Stableford.</b> Running alongside the Cup, every player&rsquo;s <b>net Stableford</b> points are totted up over the eighteen. The top three take <b>1st, 2nd and 3rd</b>; the lowest total takes <b>the Wooden Spoon</b>. <b>Twelve of the forty can&rsquo;t win the Spoon</b> &mdash; eight guests on their first outing with the society, and four who have already won it this year.</p>
     <p><b><span class="gm" title="Guest &mdash; closest to the pin, longest drive and the &pound;2 pot">Guest</span> Not a society member.</b> Nine of the forty. Their points count towards the Cup, but of the prizes they can win only <b>closest to the pin</b>, <b>longest drive</b>, the <b>&pound;2 pot</b> on the par 3s and, if eligible, <b>the Wooden Spoon</b>.</p>
     <p><b>How the sides were split.</b> The field was ranked by handicap and dealt out to give two level sides, then players and handicaps were traded in place as they firmed up. Europe now averages <b>20.85</b>, USA <b>20.20</b>.</p>
@@ -498,6 +505,16 @@ details b { color: var(--ink); font-weight: 600; }
     q.focus();
   });
   q.addEventListener('input', apply);
+})();
+</script>
+<script>
+(function () {
+  var sp = document.getElementById('small-print');
+  if (!sp) return;
+  function open() { sp.open = true; }
+  document.querySelectorAll('a[href="#small-print"]').forEach(function (a) { a.addEventListener('click', open); });
+  if (location.hash === '#small-print') { open(); }
+  window.addEventListener('hashchange', function () { if (location.hash === '#small-print') { open(); } });
 })();
 </script>
 </body>
