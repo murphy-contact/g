@@ -7,6 +7,9 @@ at [mulligansbar.online](https://mulligansbar.online/).
 - `live.html` — the live leaderboard (served at `/live`): running Europe v USA score, all
   twenty singles with their state. Ships in a pre-event state; the scorer flips `MODE` to
   `live` and edits the match list on the day.
+- `mock.html` — a worked example (served at `/mock`) of how the board looks mid-round:
+  live match states plus the Stableford table. Carries an "Example board" banner so its
+  sample scores are never mistaken for a real result.
 - `draw.html` — a redirect to `/`, so links shared before the restructure still work
 - `draft.html` — a redirect to `/`; the staging copy lives at an unlisted address
 
