@@ -4,6 +4,9 @@ The Mulligan's Bar Golf Society Captain's Day draw sheet, served by GitHub Pages
 at [mulligansbar.online](https://mulligansbar.online/).
 
 - `index.html` — the whole thing: tee sheet, both sides, and the shots in every match
+- `live.html` — the live leaderboard (served at `/live`): running Europe v USA score, all
+  twenty singles with their state. Ships in a pre-event state; the scorer flips `MODE` to
+  `live` and edits the match list on the day.
 - `draw.html` — a redirect to `/`, so links shared before the restructure still work
 - `draft.html` — a redirect to `/`; the staging copy lives at an unlisted address
 
