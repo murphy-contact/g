@@ -470,7 +470,7 @@ details b { color: var(--ink); font-weight: 600; }
 <details id="small-print">
   <summary>The small print</summary>
   <div class="body">
-    <p class="asof"><b>As of Thursday, September 10th @ 2:16 PM</b></p>
+    <p class="asof"><b>As of Thursday, September 10th @ 2:27 PM</b></p>
     <p><b>Two competitions, one card.</b> The Cup is matchplay, Europe against USA. The Stableford is every player&rsquo;s own score, for the prizes and the Spoon. Same eighteen holes, same card &mdash; both count.</p>
     <p><b>Everybody plays eighteen.</b> A match result stands the moment it is decided &mdash; 3 &amp; 2 is 3 &amp; 2 &mdash; but nobody picks up and nothing is conceded. Play out all eighteen and hand in a full card, because the same round decides the Stableford.</p>
     <p><b>The Cup.</b> Twenty singles matches, <b>two in every group of four</b>, a point for a win and a half each for a half. <b>10&frac12; of 20 takes the Cup.</b></p>
@@ -553,7 +553,7 @@ details b { color: var(--ink); font-weight: 600; }
     var h = Math.floor(s / 3600); s -= h * 3600;
     var m = Math.floor(s / 60); s -= m * 60;
     function u(n, w) { return n + ' ' + w + (n === 1 ? '' : 's'); }
-    if (d > 0) return u(d, 'day') + ' ' + u(h, 'hour') + ' ' + u(m, 'minute');
+    if (d > 0) return u(d, 'day') + ' ' + u(h, 'hour') + ' ' + u(m, 'minute') + ' ' + u(s, 'second');
     if (h > 0) return u(h, 'hour') + ' ' + u(m, 'minute') + ' ' + u(s, 'second');
     return u(m, 'minute') + ' ' + u(s, 'second');
   }
