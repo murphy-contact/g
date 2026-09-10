@@ -32,12 +32,12 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   font-weight:600; letter-spacing:0.12em; padding:0.5rem 1rem; text-align:center; text-transform:uppercase; }
 .mock b { font-weight:700; }
 
-.top { overflow:hidden; padding:1rem 1rem 0.7rem; text-align:center; }
-.crestwrap { margin:0 auto 0.5rem; position:relative; width:100%; }
+.top { overflow:hidden; padding:0.6rem 1rem 0.55rem; text-align:center; }
+.crestwrap { margin:0 auto 0.35rem; position:relative; width:52%; }
 .crestflags { display:block; height:auto; left:-10%; position:absolute; top:0; width:120%; }
 .crest { display:block; height:auto; margin:0 auto; position:relative; width:58%; }
-.top h1 { font-size:1.85rem; font-weight:700; letter-spacing:0.09em; line-height:1.15; text-indent:0.09em; }
-.top .sub { color:var(--soft); font-family:var(--display); font-size:0.92rem;
+.top h1 { font-size:1.6rem; font-weight:700; letter-spacing:0.08em; line-height:1.1; text-indent:0.08em; }
+.top .sub { color:var(--soft); font-family:var(--display); font-size:0.82rem;
   letter-spacing:0.09em; text-indent:0.09em; text-transform:uppercase; }
 .stamp { align-items:center; display:inline-flex; gap:0.4rem; justify-content:center; margin-top:0.35rem; }
 .dot { background:var(--live); border-radius:50%; height:0.5rem; width:0.5rem; flex:0 0 auto; }
@@ -62,6 +62,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .bar__tick { background:var(--gold); bottom:-3px; position:absolute; top:-3px; width:2px; }
 .bar__tick::after { background:var(--gold); border-radius:50%; content:""; height:6px; left:-2px;
   position:absolute; top:-5px; width:6px; }
+.bar__ctr { background:var(--gold); bottom:-4px; left:50%; position:absolute; top:-4px; width:2.5px; transform:translateX(-1px); }
 .cap { color:rgba(255,255,255,0.72); font-size:0.76rem; margin-top:0.55rem; text-align:center; }
 .cap b { color:var(--gold); font-weight:700; }
 
@@ -150,9 +151,9 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   <div class="bar">
     <div class="bar__e" style="width:0.0%"></div>
     <div class="bar__a" style="width:0.0%"></div>
-    <div class="bar__tick" style="left:52.5%"></div>
+    <div class="bar__ctr" aria-hidden="true"></div>
   </div>
-  <p class="cap">Twenty singles &middot; <b>10&frac12; takes the Cup</b></p>
+  <p class="cap">Twenty singles &middot; lead past the gold centre line &mdash; <b>10&frac12; wins</b></p>
 </div>
 
 <div class="legend"><span class="pre">Draw set &mdash; scores go live on the day</span></div>
