@@ -167,6 +167,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   grid-template-columns:1.6rem 1fr 2.1rem 2.1rem 2.6rem; padding:0.34rem 1rem; }
 .sh { color:var(--soft); font-family:var(--display); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; }
 .sh span:not(.pl) { text-align:right; }
+.sh .sh__b { color:var(--ink); font-weight:700; }
 .sp { border-top:1px solid var(--hair); }
 .sr { border-bottom:1px solid var(--hair); font-variant-numeric:tabular-nums; }
 .sr__i { color:var(--soft); font-family:var(--display); font-weight:600; text-align:right; }
@@ -235,9 +236,9 @@ def stableford_section(mode):
 f'''    <li class="sr{cls}"><span class="sr__i">{i}</span>'''
 f'''<span class="sr__p"><span class="sr__dot {p['team']}"></span><span class="sr__n">{e(p['name'])}</span>{g}</span>'''
 f'''<span class="sr__f">{p['thru']}</span>'''
-f'''<span class="sr__f">{p['pts']}</span><span class="sr__j">{p['proj']}</span></li>''')
+f'''<span class="sr__j">{p['pts']}</span><span class="sr__f">{p['proj']}</span></li>''')
     return f'''<div class="head"><h2>The Stableford</h2><p>Individual net</p></div>
-<div class="sh"><span class="pl">&nbsp;</span><span class="pl">Player</span><span>Thru</span><span>Pts</span><span>Proj</span></div>
+<div class="sh"><span class="pl">&nbsp;</span><span class="pl">Player</span><span>Thru</span><span class="sh__b">Pts</span><span>Proj</span></div>
 <ol class="sp">
 {chr(10).join(rows)}
 </ol>
