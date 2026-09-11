@@ -74,6 +74,7 @@ CSS = '''
   --home:#5a86f5; --away:#ee4a50; --band:#05062e; --live:#ee4a50;
 }
 * { box-sizing:border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior:smooth; } }
 html,body { margin:0; padding:0; }
 img { max-width:100%; }
 body { background:var(--paper); color:var(--ink); font-family:var(--body);
@@ -89,6 +90,9 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .top h1 { font-size:1.8rem; font-weight:700; letter-spacing:0.08em; line-height:1.1; text-indent:0.08em; }
 .top .sub { color:var(--soft); font-family:var(--display); font-size:0.82rem;
   letter-spacing:0.09em; text-indent:0.09em; text-transform:uppercase; }
+.top .sub a { color:var(--home); text-decoration:underline; text-underline-offset:0.15em; }
+.top .sub a:hover, .top .sub a:focus-visible { text-decoration-thickness:2px; }
+#stableford { scroll-margin-top:0.6rem; }
 /* title set above */
 .stamp { align-items:center; display:inline-flex; flex-wrap:wrap; gap:0.35rem; justify-content:center; margin-top:0.3rem; }
 .dot { background:var(--live); border-radius:50%; height:0.5rem; width:0.5rem; flex:0 0 auto; }
@@ -228,7 +232,7 @@ f'''    <li class="row">
 
 def stableford_section(mode):
     if mode == 'pre':
-        return '<div class="head"><h2>The Stableford</h2><p>Individual net</p></div>'
+        return '<div class="head" id="stableford"><h2>The Stableford</h2><p>Individual net</p></div>'
     ps = score_stableford(build_players())
     rows = []
     for i, p in enumerate(ps, 1):
@@ -242,7 +246,7 @@ f'''    <li class="sr{cls}" data-rank="{i}" data-name="{e(p['name'])}" data-thru
 f'''<span class="sr__p"><span class="sr__dot {p['team']}"></span><span class="sr__n">{e(p['name'])}</span>{g}</span>'''
 f'''<span class="sr__f">{p['thru']}</span>'''
 f'''<span class="sr__j">{p['pts']}</span><span class="sr__f">{p['proj']}</span></li>''')
-    return f'''<div class="head"><h2>The Stableford</h2><p>Individual net</p></div>
+    return f'''<div class="head" id="stableford"><h2>The Stableford</h2><p>Individual net</p></div>
 <div class="sh"><button type="button" class="sh__k" data-k="rank" aria-label="Sort by position">#</button><button type="button" class="sh__k pl" data-k="name">Player</button><button type="button" class="sh__k" data-k="thru">Thru</button><button type="button" class="sh__k b" data-k="pts">Pts</button><button type="button" class="sh__k" data-k="proj">Proj</button></div>
 <ol class="sp">
 {chr(10).join(rows)}
@@ -342,7 +346,7 @@ def build(mode, out, mock):
 {mockbar}
 <header class="top">
   <h1>Captain&rsquo;s Day &mdash; Live</h1>
-  <p class="sub">Singles Matchplay &middot; Stableford</p>
+  <p class="sub">Singles Matchplay &middot; <a href="#stableford">Stableford</a></p>
   <p class="stamp">{stamp}</p>
 </header>
 
