@@ -165,9 +165,14 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 /* stableford board */
 .sh, .sr { align-items:center; display:grid; gap:0.4rem;
   grid-template-columns:1.6rem 1fr 2.1rem 2.1rem 2.6rem; padding:0.34rem 1rem; }
-.sh { color:var(--soft); font-family:var(--display); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; }
-.sh span:not(.pl) { text-align:right; }
-.sh .sh__b { color:var(--ink); font-weight:700; }
+.sh { color:var(--soft); font-family:var(--display); font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; }
+.sh__k { background:none; border:0; color:inherit; cursor:pointer; font:inherit; letter-spacing:inherit;
+  padding:0; text-align:right; text-transform:inherit; white-space:nowrap; width:100%; }
+.sh__k.pl { text-align:left; }
+.sh__k.b { color:var(--ink); font-weight:700; }
+.sh__k:hover, .sh__k:focus-visible { color:var(--ink); }
+.sh__k[data-active] { color:var(--ink); }
+.sh__k .car { font-size:0.82em; margin-left:0.1em; }
 .sp { border-top:1px solid var(--hair); }
 .sr { border-bottom:1px solid var(--hair); font-variant-numeric:tabular-nums; }
 .sr__i { color:var(--soft); font-family:var(--display); font-weight:600; text-align:right; }
@@ -233,18 +238,63 @@ def stableford_section(mode):
         if p["spoon"]: cls += " sr--spoon"
         g = '<span class="sr__g">Guest</span>' if p["guest"] else ''
         rows.append(
-f'''    <li class="sr{cls}"><span class="sr__i">{i}</span>'''
+f'''    <li class="sr{cls}" data-rank="{i}" data-name="{e(p['name'])}" data-thru="{p['thru']}" data-pts="{p['pts']}" data-proj="{p['proj']}"><span class="sr__i">{i}</span>'''
 f'''<span class="sr__p"><span class="sr__dot {p['team']}"></span><span class="sr__n">{e(p['name'])}</span>{g}</span>'''
 f'''<span class="sr__f">{p['thru']}</span>'''
 f'''<span class="sr__j">{p['pts']}</span><span class="sr__f">{p['proj']}</span></li>''')
     return f'''<div class="head"><h2>The Stableford</h2><p>Individual net</p></div>
-<div class="sh"><span class="pl">&nbsp;</span><span class="pl">Player</span><span>Thru</span><span class="sh__b">Pts</span><span>Proj</span></div>
+<div class="sh"><button type="button" class="sh__k" data-k="rank" aria-label="Sort by position">#</button><button type="button" class="sh__k pl" data-k="name">Player</button><button type="button" class="sh__k" data-k="thru">Thru</button><button type="button" class="sh__k b" data-k="pts">Pts</button><button type="button" class="sh__k" data-k="proj">Proj</button></div>
 <ol class="sp">
 {chr(10).join(rows)}
 </ol>
 <p class="note"><b>Proj</b> stretches each card to eighteen holes at its current rate and the table is
 ranked on it, highest first &mdash; groups are at different holes, so points-so-far are not yet
 comparable.</p>'''
+
+
+SORT_JS = """<script>
+(function () {
+  var sp = document.querySelector('.sp');
+  var head = document.querySelector('.sh');
+  if (!sp || !head) return;
+  var rows = [].slice.call(sp.querySelectorAll('.sr'));
+  var state = { k: 'proj', dir: 'desc' };
+  function val(li, k) {
+    if (k === 'name') return li.getAttribute('data-name').toLowerCase();
+    return parseFloat(li.getAttribute('data-' + k));
+  }
+  function apply() {
+    var k = state.k, dir = state.dir === 'asc' ? 1 : -1;
+    rows.slice().sort(function (a, b) {
+      var va = val(a, k), vb = val(b, k);
+      if (va < vb) return -dir;
+      if (va > vb) return dir;
+      return parseFloat(a.getAttribute('data-rank')) - parseFloat(b.getAttribute('data-rank'));
+    }).forEach(function (li) { sp.appendChild(li); });
+    head.querySelectorAll('.sh__k').forEach(function (btn) {
+      var old = btn.querySelector('.car'); if (old) old.remove();
+      btn.removeAttribute('data-active');
+      if (btn.getAttribute('data-k') === k) {
+        btn.setAttribute('data-active', '');
+        var s = document.createElement('span');
+        s.className = 'car';
+        s.textContent = dir === 1 ? '▲' : '▼';
+        btn.appendChild(s);
+      }
+    });
+  }
+  head.querySelectorAll('.sh__k').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var k = btn.getAttribute('data-k');
+      var def = (k === 'name' || k === 'rank') ? 'asc' : 'desc';
+      if (state.k === k) state.dir = state.dir === 'asc' ? 'desc' : 'asc';
+      else { state.k = k; state.dir = def; }
+      apply();
+    });
+  });
+  apply();
+})();
+</script>"""
 
 def build(mode, out, mock):
     # scores
@@ -320,6 +370,7 @@ def build(mode, out, mock):
 
 {stableford_section(mode)}
 '''
+    HTML += SORT_JS
     open(out,'w',encoding='utf-8').write(HTML)
     print(f"{out}  mode={mode} mock={mock}  EUR {frac(pe)} v USA {frac(pa)}  {len(HTML)} bytes")
 
