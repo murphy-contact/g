@@ -92,7 +92,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   letter-spacing:0.09em; text-indent:0.09em; text-transform:uppercase; }
 .top .sub a { color:var(--home); text-decoration:underline; text-underline-offset:0.15em; }
 .top .sub a:hover, .top .sub a:focus-visible { text-decoration-thickness:2px; }
-#stableford { scroll-margin-top:0.6rem; }
+#stableford, #cup { scroll-margin-top:0.6rem; }
 /* title set above */
 .stamp { align-items:center; display:inline-flex; flex-wrap:wrap; gap:0.35rem; justify-content:center; margin-top:0.3rem; }
 .dot { background:var(--live); border-radius:50%; height:0.5rem; width:0.5rem; flex:0 0 auto; }
@@ -346,11 +346,11 @@ def build(mode, out, mock):
 {mockbar}
 <header class="top">
   <h1>Captain&rsquo;s Day &mdash; Live</h1>
-  <p class="sub">Singles Matchplay &middot; <a href="#stableford">Stableford</a></p>
+  <p class="sub"><a href="#cup">Singles Matchplay</a> &middot; <a href="#stableford">Stableford</a></p>
   <p class="stamp">{stamp}</p>
 </header>
 
-<div class="hero">
+<div class="hero" id="cup">
   <div class="hs">
     <div><div class="hs__t eu">Europe</div><div class="hs__n">{frac(pe)}</div></div>
     <div class="hs__dash">&ndash;</div>
