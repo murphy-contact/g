@@ -85,6 +85,10 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .mock { background:var(--gold); color:var(--navy); font-family:var(--display); font-size:0.8rem;
   font-weight:600; letter-spacing:0.12em; padding:0.5rem 1rem; text-align:center; text-transform:uppercase; }
 .mock b { font-weight:700; }
+.back { align-items:center; color:var(--home); display:inline-flex; font-family:var(--display);
+  font-size:0.8rem; font-weight:600; gap:0.25rem; letter-spacing:0.06em; margin:0.55rem 0 0 1rem;
+  text-decoration:none; text-transform:uppercase; }
+.back:hover, .back:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
 
 .top { padding:1.1rem 1rem 0.75rem; text-align:center; }
 .top h1 { font-size:1.8rem; font-weight:700; letter-spacing:0.08em; line-height:1.1; text-indent:0.08em; }
@@ -344,6 +348,7 @@ def build(mode, out, mock):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>{CSS}</style>
 {mockbar}
+<a class="back" href="/">&larr; Draw sheet</a>
 <header class="top">
   <h1>Captain&rsquo;s Day &mdash; Live</h1>
   <p class="sub"><a href="#cup">Singles Matchplay</a> &middot; <a href="#stableford">Stableford</a></p>
