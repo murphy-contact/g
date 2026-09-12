@@ -440,7 +440,7 @@ LIVE_RESULTS = {
     17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
     3:  dict(thru=12, up=0),   # Lochlann v Leo -- A/S thru 12 (Lochlann's shot won the 7th; Leo eagled the 11th)
     18: dict(thru=12, up=+2),  # Conan v Conor -- Conan 2 up thru 12 (Conan's shot won the 7th)
-    19: dict(done=1, up=+5, res="5&4"),  # Dom v Buff -- Dom won 5&4 on the card (group reported 'Dom up 2')
+    19: dict(thru=15, up=+2),  # Dom v Buff -- Dom 2 up thru 15 (Buff won 14th and 15th; Buff's shots halved 7th, won 12th, won 15th)
     1:  dict(thru=13, up=-3),  # Ger v Diarmuid King -- Diarmuid 3 up thru 13 (Ger's shot won the 7th)
     20: dict(thru=13, up=+1),  # Johnny McManus v Goof -- Johnny 1 up thru 13
     2:  dict(done=1, up=+4, res="4&3"),  # Shay v Jock -- Shay won 4&3
@@ -465,7 +465,7 @@ LIVE_SF = {
     'Leo':               dict(thru=12, pts=23),
     'Conan':             dict(thru=12, pts=10),
     'Conor':             dict(thru=12, pts=13),
-    'Dom':               dict(thru=15, pts=20),
+    'Dom':               dict(thru=15, pts=16),
     'Buff':              dict(thru=15, pts=4),
     'Ger':               dict(thru=13, pts=22),
     'Diarmuid King':     dict(thru=13, pts=25),
