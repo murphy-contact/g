@@ -169,8 +169,14 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .st--done { color:var(--ink); } .st--halved { color:#a9871a; } .st--tee { color:var(--soft); }
 .st--f { color:var(--ink); letter-spacing:0.06em; }
 
-.rep { color:var(--soft); font-size:0.9rem; grid-column:1 / -1; line-height:1.45; padding:0.5rem 0.75rem 0.65rem; }
-.rep b { color:var(--ink); font-weight:600; }
+.rep { grid-column:1 / -1; padding:0.3rem 0.75rem 0.55rem; }
+.rep summary { color:var(--home); cursor:pointer; display:inline-flex; font-family:var(--display); font-size:0.72rem;
+  font-weight:600; gap:0.3rem; letter-spacing:0.08em; list-style:none; text-transform:uppercase; }
+.rep summary::-webkit-details-marker { display:none; }
+.rep summary::after { content:"▾"; } .rep[open] summary::after { content:"▴"; }
+.rep summary:hover, .rep summary:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
+.rep p { color:var(--soft); font-size:0.9rem; line-height:1.45; margin-top:0.4rem; }
+.rep p b { color:var(--ink); font-weight:600; }
 .note { color:var(--soft); font-size:0.82rem; padding:0.8rem 1rem 0; }
 .note b { color:var(--ink); font-weight:600; }
 
@@ -243,7 +249,8 @@ f'''    <li class="row">
             hmarg = marg() if (hlead or up==0) else ""
             amarg = marg() if (alead or up==0) else ""
             hcls=" lead" if hlead else ""; acls=" lead" if alead else ""
-        rep = f'\n      <p class="rep">{reports[no]}</p>' if reports and no in reports else ''
+        rep = (f'\n      <details class="rep"><summary>Match report</summary><p>{reports[no]}</p></details>'
+               if reports and no in reports else '')
         rows.append(
 f'''    <li class="row">
       <div class="side side--h{hcls}"><span class="marg">{hmarg}</span><span class="nm">{e(hn)}</span></div>
