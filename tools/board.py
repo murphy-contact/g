@@ -328,7 +328,7 @@ def build(mode, out, mock, results=None, sf=True, when=None):
             if u>0: pe+=1
             elif u<0: pa+=1
             else: pe+=.5; pa+=.5
-        elif st and not real:            # mock projects in-progress matches
+        elif st:                         # in-progress matches project at their current standing
             u = st["up"]
             if u>0: pe+=1
             elif u<0: pa+=1
@@ -346,8 +346,7 @@ def build(mode, out, mock, results=None, sf=True, when=None):
     else:
         whenstr = when or ('Saturday, September 12th &middot; 5:34 PM' if mock else stamp_full())
         stamp=f'<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">{whenstr}</span>'
-        cap=('Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b>' if not real
-             else 'Live &middot; lead past the gold centre line &mdash; <b>10&frac12; wins</b>')
+        cap='Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b>'
         legend=('<b><span class="chip eu"></span>Europe up</b><b><span class="chip us"></span>USA up</b>'
                 f'<span>{done_n} in &middot; {out_n} out</span>')
         note=''
