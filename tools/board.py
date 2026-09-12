@@ -438,9 +438,9 @@ LIVE_RESULTS = {
     6:  dict(thru=12, up=+2),  # Fintan Flynn v Ray McCarron -- Fintan 2 up thru 12 (Ray's shot won the 12th)
     4:  dict(thru=12, up=+4),  # Frank v Marty -- Frank 4 up thru 12
     17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
-    3:  dict(thru=10, up=0),   # Lochlann v Leo -- A/S thru 10 (Lochlann's shot won the 7th)
-    18: dict(thru=6, up=0),    # Conan v Conor -- A/S thru 6
-    19: dict(thru=9, up=+2),   # Dom v Buff -- Dom 2 up thru 9 (Buff's shot halved the 7th)
+    3:  dict(thru=12, up=0),   # Lochlann v Leo -- A/S thru 12 (Lochlann's shot won the 7th; Leo eagled the 11th)
+    18: dict(thru=12, up=+2),  # Conan v Conor -- Conan 2 up thru 12 (Conan's shot won the 7th)
+    19: dict(thru=11, up=+4),  # Dom v Buff -- Dom 4 up thru 11 (Buff's shot halved the 7th)
     1:  dict(thru=8, up=-4),   # Ger v Diarmuid King -- Diarmuid 4 up thru 8 (Ger's shot won the 7th)
     20: dict(thru=7, up=-2),   # Johnny McManus v Goof -- Goof 2 up thru 7 (5th confirmed Johnny 7, Goof 10)
     2:  dict(thru=9, up=+1),   # Shay v Jock -- Shay 1 up thru 9 (Shay's shot won the 7th)
@@ -461,12 +461,12 @@ LIVE_SF = {
     'Marty':             dict(thru=12, pts=20),
     'Ronnie Flanagan':   dict(thru=12, pts=8),   # scratched 1-3, 6, 8-10
     'Seamus McKiernan':  dict(thru=12, pts=26),
-    'Lochlann':          dict(thru=10, pts=18),
-    'Leo':               dict(thru=10, pts=17),
-    'Conan':             dict(thru=6, pts=4),
-    'Conor':             dict(thru=6, pts=9),
-    'Dom':               dict(thru=9, pts=9),
-    'Buff':              dict(thru=9, pts=3),
+    'Lochlann':          dict(thru=12, pts=22),
+    'Leo':               dict(thru=12, pts=23),
+    'Conan':             dict(thru=12, pts=10),
+    'Conor':             dict(thru=12, pts=13),
+    'Dom':               dict(thru=11, pts=13),
+    'Buff':              dict(thru=11, pts=3),
     'Ger':               dict(thru=8, pts=13),
     'Diarmuid King':     dict(thru=8, pts=17),
     'Johnny McManus':    dict(thru=7, pts=4),
