@@ -533,8 +533,8 @@ LIVE_SF = {
     'Diarmuid King':     dict(thru=16, pts=27),
     'Johnny McManus':    dict(thru=15, pts=19),
     'Goof':              dict(thru=15, pts=19),
-    'Shay':              dict(thru=15, pts=31),
-    'Jock':              dict(thru=15, pts=25),
+    'Shay':              dict(thru=18, pts=37),
+    'Jock':              dict(thru=18, pts=31),
     'Jamie Teague':      dict(thru=16, pts=10),
     'Ingy':              dict(thru=16, pts=20),
     'Jonto':             dict(thru=14, pts=13),   # scratched 5th, 12th
