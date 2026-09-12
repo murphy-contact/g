@@ -431,7 +431,7 @@ LIVE_RESULTS = {
     9:  dict(thru=9, up=+1),   # Govy v Johnny McCafferty -- Govy 1 up thru 9
     5:  dict(thru=9, up=+2),   # Brendy v Raymond McGloin -- Brendy 2 up thru 9
     7:  dict(thru=8, up=+2),   # Jamie McCaffrey v Blobby -- Jamie 2 up thru 8
-    14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6
+    14: dict(thru=9, up=-1),   # Kealan v Mully -- Mully 1 up thru 9 (shot won the 8th)
     16: dict(thru=8, up=-3),   # Hugo v Collie -- Collie 3 up thru 8 (shot halved the 7th)
     15: dict(thru=9, up=+2),   # Rusty v Sean Conlon -- Rusty 2 up thru 9
     12: dict(thru=9, up=+4),   # Ben Caughey v Andy -- Ben 4 up thru 9 (shot won the 7th)
@@ -485,8 +485,8 @@ LIVE_SF = {
     'Raymond McGloin':   dict(thru=9, pts=13),
     'Jamie McCaffrey':   dict(thru=8, pts=12),
     'Blobby':            dict(thru=8, pts=10),
-    'Kealan':            dict(thru=6, pts=6),   # scratched 6th
-    'Mully':             dict(thru=6, pts=7),
+    'Kealan':            dict(thru=9, pts=12),  # scratched 6th
+    'Mully':             dict(thru=9, pts=9),
     'Hugo':              dict(thru=8, pts=7),
     'Collie':            dict(thru=8, pts=11),
     'Rusty':             dict(thru=9, pts=9),
