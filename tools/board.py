@@ -457,8 +457,8 @@ LIVE_SF = {
     'Johnny McCafferty': dict(thru=18, pts=29),   # scratched 1st, 5th
     'Fintan Flynn':      dict(thru=18, pts=34),
     'Ray McCarron':      dict(thru=18, pts=32),   # scratched 5th, 6th
-    'Frank':             dict(thru=16, pts=31),
-    'Marty':             dict(thru=16, pts=27),
+    'Frank':             dict(thru=18, pts=35),
+    'Marty':             dict(thru=18, pts=34),
     'Ronnie Flanagan':   dict(thru=12, pts=8),   # scratched 1-3, 6, 8-10
     'Seamus McKiernan':  dict(thru=12, pts=26),
     'Lochlann':          dict(thru=12, pts=22),
