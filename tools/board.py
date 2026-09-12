@@ -427,8 +427,11 @@ LIVE_ON = True
 LIVE_RESULTS = {
     9:  dict(thru=2, up=0),    # Govy v Johnny McCafferty -- A/S thru 2
     5:  dict(thru=3, up=0),    # Brendy v Raymond McGloin -- A/S thru 3
-    7:  dict(thru=2, up=+1),   # Jamie McCaffrey v Blobby -- Jamie (EUR) 1 up thru 2
-    14: dict(thru=2, up=0),    # Kealan v Mully -- A/S thru 2
+    7:  dict(thru=4, up=-1),   # Jamie McCaffrey v Blobby -- Blobby 1 up thru 4
+    14: dict(thru=4, up=-1),   # Kealan v Mully -- Mully 1 up thru 4
+    16: dict(thru=2, up=-2),   # Hugo v Collie -- Collie 2 up thru 2
+    15: dict(thru=3, up=+1),   # Rusty v Sean Conlon -- Rusty 1 up thru 3
+    12: dict(thru=3, up=-1),   # Ben Caughey v Andy -- Andy 1 up thru 3
 }
 
 # player name (exactly as in M) -> dict(thru=holes played, pts=net Stableford points so far),
@@ -438,10 +441,16 @@ LIVE_SF = {
     'Johnny McCafferty': dict(thru=2, pts=3),   # scratched the 1st
     'Brendy':            dict(thru=3, pts=6),
     'Raymond McGloin':   dict(thru=3, pts=6),
-    'Jamie McCaffrey':   dict(thru=2, pts=4),
-    'Blobby':            dict(thru=2, pts=2),
-    'Kealan':            dict(thru=2, pts=2),
-    'Mully':             dict(thru=2, pts=0),
+    'Jamie McCaffrey':   dict(thru=4, pts=6),
+    'Blobby':            dict(thru=4, pts=8),
+    'Kealan':            dict(thru=4, pts=5),
+    'Mully':             dict(thru=4, pts=3),
+    'Hugo':              dict(thru=2, pts=0),
+    'Collie':            dict(thru=2, pts=3),
+    'Rusty':             dict(thru=3, pts=3),
+    'Sean Conlon':       dict(thru=3, pts=2),
+    'Ben Caughey':       dict(thru=3, pts=6),
+    'Andy':              dict(thru=3, pts=6),
 }
 
 if LIVE_ON:
