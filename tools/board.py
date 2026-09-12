@@ -431,7 +431,7 @@ LIVE_RESULTS = {
     5:  dict(thru=6, up=+1),   # Brendy v Raymond McGloin -- Brendy 1 up thru 6
     7:  dict(thru=6, up=0),    # Jamie McCaffrey v Blobby -- A/S thru 6
     14: dict(thru=6, up=-1),   # Kealan v Mully -- Mully 1 up thru 6
-    16: dict(thru=4, up=-3),   # Hugo v Collie -- Collie 3 up thru 4
+    16: dict(thru=6, up=-3),   # Hugo v Collie -- Collie 3 up thru 6
     15: dict(thru=6, up=0),    # Rusty v Sean Conlon -- A/S thru 6
     12: dict(thru=6, up=+1),   # Ben Caughey v Andy -- Ben 1 up thru 6
     6:  dict(thru=6, up=+2),   # Fintan Flynn v Ray McCarron -- Fintan 2 up thru 6
@@ -480,8 +480,8 @@ LIVE_SF = {
     'Blobby':            dict(thru=6, pts=8),
     'Kealan':            dict(thru=6, pts=6),   # scratched 6th
     'Mully':             dict(thru=6, pts=7),
-    'Hugo':              dict(thru=4, pts=3),
-    'Collie':            dict(thru=4, pts=7),
+    'Hugo':              dict(thru=6, pts=5),
+    'Collie':            dict(thru=6, pts=9),
     'Rusty':             dict(thru=6, pts=6),
     'Sean Conlon':       dict(thru=6, pts=6),
     'Ben Caughey':       dict(thru=6, pts=13),
