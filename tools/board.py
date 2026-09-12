@@ -435,7 +435,7 @@ LIVE_RESULTS = {
     16: dict(thru=14, up=-1),  # Hugo v Collie -- Collie 1 up thru 14 (Collie's shot halved the 7th, won the 12th)
     15: dict(done=1, up=-2, res="2 up"),  # Rusty v Sean Conlon -- Sean won 2 up (won 16th, 17th, 18th)
     12: dict(done=1, up=+7, res="7&6"),  # Ben Caughey v Andy -- Ben won 7&6
-    6:  dict(thru=15, up=0),   # Fintan Flynn v Ray McCarron -- A/S thru 15 (Ray's shot won the 12th, halved the 15th)
+    6:  dict(done=1, up=+1, res="1 up"),  # Fintan Flynn v Ray McCarron -- Fintan won 1 up (won the 18th)
     4:  dict(done=1, up=+4, res="4&3"),  # Frank v Marty -- Frank won 4&3
     17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
     3:  dict(thru=12, up=0),   # Lochlann v Leo -- A/S thru 12 (Lochlann's shot won the 7th; Leo eagled the 11th)
@@ -455,8 +455,8 @@ LIVE_RESULTS = {
 LIVE_SF = {
     'Govy':              dict(thru=18, pts=29),   # scratched 10th
     'Johnny McCafferty': dict(thru=18, pts=29),   # scratched 1st, 5th
-    'Fintan Flynn':      dict(thru=15, pts=26),
-    'Ray McCarron':      dict(thru=15, pts=25),   # scratched 5th, 6th
+    'Fintan Flynn':      dict(thru=18, pts=34),
+    'Ray McCarron':      dict(thru=18, pts=32),   # scratched 5th, 6th
     'Frank':             dict(thru=16, pts=31),
     'Marty':             dict(thru=16, pts=27),
     'Ronnie Flanagan':   dict(thru=12, pts=8),   # scratched 1-3, 6, 8-10
