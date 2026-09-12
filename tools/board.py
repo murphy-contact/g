@@ -1,4 +1,14 @@
 import html, random, os
+from datetime import datetime
+try:
+    from zoneinfo import ZoneInfo
+    NOW = datetime.now(ZoneInfo("Europe/Dublin"))
+except Exception:
+    NOW = datetime.now()
+def stamp_full():
+    d = NOW.day
+    suf = 'th' if 11 <= d % 100 <= 13 else {1: 'st', 2: 'nd', 3: 'rd'}.get(d % 10, 'th')
+    return NOW.strftime('%A, %B ') + f'{d}{suf} &middot; ' + NOW.strftime('%I:%M %p').lstrip('0')
 e = html.escape
 
 # (tee, no, EUR name, EUR hcp, EUR guest, USA name, USA hcp, USA guest, state)
@@ -198,10 +208,11 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .sr--spoon .sr__i::after { content:" \\1F944"; }
 '''
 
-def cup_rows(mode):
+def cup_rows(mode, results=None):
     rows = []
     for tee, no, hn, hh, hg, an, ah, ag, s in M:
-        if mode == 'pre':
+        st = s if results is None else results.get(no)
+        if mode == 'pre' or st is None:
             rows.append(
 f'''    <li class="row">
       <div class="side side--h"><span class="marg"></span><span class="nm">{e(hn)}</span></div>
@@ -209,9 +220,9 @@ f'''    <li class="row">
       <div class="side side--a"><span class="nm">{e(an)}</span><span class="marg"></span></div>
     </li>''')
             continue
-        up = s["up"]; done = s.get("done"); hlead = up>0; alead = up<0
+        up = st["up"]; done = st.get("done"); hlead = up>0; alead = up<0
         if done:
-            res = s["res"]
+            res = st["res"]
             mid = '<span class="st st--f">F</span>'
             if res == "halved":
                 hmarg=amarg="A/S"; hcls=acls=" done half"
@@ -220,7 +231,7 @@ f'''    <li class="row">
             else:
                 amarg=res; hmarg=""; hcls=" done"; acls=" done win"
         else:
-            thru=s["thru"]; rem=18-thru; mid=f'<span class="st">Thru {thru}</span>'
+            thru=st["thru"]; rem=18-thru; mid=f'<span class="st">Thru {thru}</span>'
             dormie=(up!=0 and abs(up)==rem)
             def marg(): return "A/S" if up==0 else ("Dormie" if dormie else f"{abs(up)} Up")
             hmarg = marg() if (hlead or up==0) else ""
@@ -304,21 +315,25 @@ SORT_JS = """<script>
 })();
 </script>"""
 
-def build(mode, out, mock):
+def build(mode, out, mock, results=None, sf=True, when=None):
     # scores
-    pe = pa = 0.0; done_n = live_n = 0
-    for *_x, s in M:
-        if s.get("done"):
+    real = results is not None
+    pe = pa = 0.0; done_n = 0
+    for row in M:
+        no_ = row[1]; ts = row[8]
+        st = ts if results is None else results.get(no_)
+        if st and st.get("done"):
             done_n += 1
-            if s["up"]>0: pe+=1
-            elif s["up"]<0: pa+=1
+            u = st["up"]
+            if u>0: pe+=1
+            elif u<0: pa+=1
             else: pe+=.5; pa+=.5
-        else:
-            live_n += 1
-            if mode=='live':
-                if s["up"]>0: pe+=1
-                elif s["up"]<0: pa+=1
-                else: pe+=.5; pa+=.5
+        elif st and not real:            # mock projects in-progress matches
+            u = st["up"]
+            if u>0: pe+=1
+            elif u<0: pa+=1
+            else: pe+=.5; pa+=.5
+    out_n = 20 - done_n
     if mode=='pre': pe=pa=0.0
     TARGET=10.5; tick=TARGET/20*100; tickU=100-tick
     pe_pct=pe/20*100; pa_pct=pa/20*100
@@ -329,15 +344,18 @@ def build(mode, out, mock):
         legend='<span class="pre">Draw set &mdash; scores go live on the day</span>'
         note='This board goes live when the first match tees off at <b>2:30 PM Saturday</b>.'
     else:
-        stamp='<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">Saturday, September 12th &middot; 5:34 PM</span>'
-        cap='Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b>'
+        whenstr = when or ('Saturday, September 12th &middot; 5:34 PM' if mock else stamp_full())
+        stamp=f'<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">{whenstr}</span>'
+        cap=('Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b>' if not real
+             else 'Live &middot; lead past the gold centre line &mdash; <b>10&frac12; wins</b>')
         legend=('<b><span class="chip eu"></span>Europe up</b><b><span class="chip us"></span>USA up</b>'
-                f'<span>{done_n} in &middot; {live_n} out</span>')
+                f'<span>{done_n} in &middot; {out_n} out</span>')
         note=''
 
     state = 'live' if mode=='live' else 'pre'
     mockbar = ('<div class="mock"><b>Example board</b> &middot; sample scores, not a real result</div>' if mock else '')
     cupnote = f'<p class="note">{note}</p>' if note else ''
+    sf_html = stableford_section('pre') if (real and not sf) else stableford_section(mode)
 
     HTML=f'''<title>Captain&rsquo;s Day &mdash; {'Example' if mock else 'Live'} Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -373,16 +391,28 @@ def build(mode, out, mock):
 
 <div class="cols"><span>Europe</span><b>&nbsp;</b><span class="us">USA</span></div>
 <ul class="board">
-{cup_rows(mode)}
+{cup_rows(mode, results)}
 </ul>
 {cupnote}
 
-{stableford_section(mode)}
+{sf_html}
 '''
     HTML += SORT_JS
     open(out,'w',encoding='utf-8').write(HTML)
     print(f"{out}  mode={mode} mock={mock}  EUR {frac(pe)} v USA {frac(pa)}  {len(HTML)} bytes")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-build('pre',  os.path.join(ROOT, 'live.html'), False)
+
+# ---- day-of controls: flip LIVE_ON to True on the first card, edit LIVE_RESULTS as cards come in ----
+LIVE_ON = True
+# match no -> dict(thru=N, up=U) in progress, or dict(done=1, up=U, res="3&2") finished.
+# up > 0 Europe ahead, up < 0 USA ahead, up == 0 all square. Missing match = not yet reported.
+LIVE_RESULTS = {
+    9: dict(thru=2, up=-1),   # Govy v Johnny McCafferty -- Johnny 1 up thru 2
+}
+
+if LIVE_ON:
+    build('live', os.path.join(ROOT, 'live.html'), False, results=LIVE_RESULTS, sf=False)
+else:
+    build('pre',  os.path.join(ROOT, 'live.html'), False)
 build('live', os.path.join(ROOT, 'mock.html'), True)
