@@ -445,7 +445,7 @@ LIVE_RESULTS = {
     20: dict(thru=2, up=0),    # Johnny McManus v Goof -- A/S thru 2
     2:  dict(thru=6, up=+2),   # Shay v Jock -- Shay 2 up thru 6
     13: dict(thru=6, up=-1),   # Jamie Teague v Ingy -- Ingy 1 up thru 6
-    8:  dict(thru=5, up=-2),   # Jonto v Sean McDermott -- Sean 2 up thru 5 (Jonto scratched 5th)
+    8:  dict(thru=6, up=-3),   # Jonto v Sean McDermott -- Sean 3 up thru 6 (Jonto scratched 5th)
     10: dict(thru=4, up=+2),   # Ryan McDermott v Caolan Swift -- Ryan 2 up thru 4
     11: dict(thru=4, up=+1),   # Micky v Jimmy -- Micky 1 up thru 4
 }
@@ -475,8 +475,8 @@ LIVE_SF = {
     'Jock':              dict(thru=6, pts=11),
     'Jamie Teague':      dict(thru=6, pts=5),
     'Ingy':              dict(thru=6, pts=9),
-    'Jonto':             dict(thru=5, pts=5),   # scratched 5th
-    'Sean McDermott':    dict(thru=5, pts=7),
+    'Jonto':             dict(thru=6, pts=7),   # scratched 5th
+    'Sean McDermott':    dict(thru=6, pts=11),
     'Ryan McDermott':    dict(thru=4, pts=10),
     'Caolan Swift':      dict(thru=4, pts=8),
     'Micky':             dict(thru=4, pts=7),
