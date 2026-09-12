@@ -444,7 +444,7 @@ LIVE_RESULTS = {
     1:  dict(thru=13, up=-3),  # Ger v Diarmuid King -- Diarmuid 3 up thru 13 (Ger's shot won the 7th)
     20: dict(thru=13, up=+1),  # Johnny McManus v Goof -- Johnny 1 up thru 13
     2:  dict(done=1, up=+4, res="4&3"),  # Shay v Jock -- Shay won 4&3
-    13: dict(done=1, up=-5, res="5&4"),  # Jamie Teague v Ingy -- Ingy won at the 14th (11th/12th not seen; 5&4 assumes 11th halved, 12th Teague)
+    13: dict(done=1, up=-6, res="6&4"),  # Jamie Teague v Ingy -- Ingy won 6&4
     8:  dict(done=1, up=-5, res="5&4"),  # Jonto v Sean McDermott -- Sean won 5&4
     10: dict(thru=14, up=+1),  # Ryan McDermott v Caolan Swift -- Ryan 1 up thru 14
     11: dict(thru=9, up=-2),   # Micky v Jimmy -- Jimmy 2 up thru 9
@@ -473,8 +473,8 @@ LIVE_SF = {
     'Goof':              dict(thru=13, pts=15),
     'Shay':              dict(thru=15, pts=31),
     'Jock':              dict(thru=15, pts=25),
-    'Jamie Teague':      dict(thru=10, pts=5),
-    'Ingy':              dict(thru=10, pts=13),
+    'Jamie Teague':      dict(thru=14, pts=9),
+    'Ingy':              dict(thru=14, pts=20),
     'Jonto':             dict(thru=14, pts=13),   # scratched 5th, 12th
     'Sean McDermott':    dict(thru=14, pts=20),   # scratched 7th
     'Ryan McDermott':    dict(thru=14, pts=19),
