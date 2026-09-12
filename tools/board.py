@@ -422,27 +422,29 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ---- day-of controls: flip LIVE_ON to True on the first card, edit LIVE_RESULTS as cards come in ----
 LIVE_ON = True
+# RULE (agreed on the day): each hole is decided by the players' Stableford points for
+# that hole, off full handicap on the Yellow stroke index. Higher points wins the hole,
+# equal points halves it. up > 0 Europe ahead, up < 0 USA ahead, 0 all square.
 # match no -> dict(thru=N, up=U) in progress, or dict(done=1, up=U, res="3&2") finished.
-# up > 0 Europe ahead, up < 0 USA ahead, up == 0 all square. Missing match = not yet reported.
 LIVE_RESULTS = {
     9:  dict(thru=7, up=+2),   # Govy v Johnny McCafferty -- Govy 2 up thru 7
-    6:  dict(thru=6, up=+3),   # Fintan Flynn v Ray McCarron -- Fintan 3 up thru 6 (Ray scratched 5th, 6th)
-    4:  dict(thru=4, up=+1),   # Frank v Marty -- Frank 1 up thru 4
-    17: dict(thru=6, up=-4),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 4 up thru 6 (Ronnie scratched 1-3, 6)
+    5:  dict(thru=6, up=+1),   # Brendy v Raymond McGloin -- Brendy 1 up thru 6
+    7:  dict(thru=6, up=0),    # Jamie McCaffrey v Blobby -- A/S thru 6
+    14: dict(thru=6, up=-1),   # Kealan v Mully -- Mully 1 up thru 6
+    16: dict(thru=4, up=-3),   # Hugo v Collie -- Collie 3 up thru 4
+    15: dict(thru=6, up=0),    # Rusty v Sean Conlon -- A/S thru 6
+    12: dict(thru=6, up=+1),   # Ben Caughey v Andy -- Ben 1 up thru 6
+    6:  dict(thru=6, up=+2),   # Fintan Flynn v Ray McCarron -- Fintan 2 up thru 6
+    4:  dict(thru=4, up=+2),   # Frank v Marty -- Frank 2 up thru 4
+    17: dict(thru=6, up=-4),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 4 up thru 6
     3:  dict(thru=3, up=0),    # Lochlann v Leo -- A/S thru 3
-    18: dict(thru=3, up=+3),   # Conan v Conor -- Conan 3 up thru 3
-    19: dict(thru=3, up=+1),   # Dom v Buff -- Dom 1 up thru 3
+    18: dict(thru=3, up=+1),   # Conan v Conor -- Conan 1 up thru 3
+    19: dict(thru=3, up=0),    # Dom v Buff -- A/S thru 3
     1:  dict(thru=2, up=-1),   # Ger v Diarmuid King -- Diarmuid 1 up thru 2
     20: dict(thru=2, up=0),    # Johnny McManus v Goof -- A/S thru 2
     2:  dict(thru=3, up=+2),   # Shay v Jock -- Shay 2 up thru 3
     13: dict(thru=2, up=0),    # Jamie Teague v Ingy -- A/S thru 2
-    8:  dict(thru=2, up=0),    # Jonto v Sean McDermott -- A/S thru 2
-    5:  dict(thru=6, up=+1),   # Brendy v Raymond McGloin -- Brendy 1 up thru 6
-    7:  dict(thru=6, up=0),    # Jamie McCaffrey v Blobby -- A/S thru 6
-    14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6 (Kealan scratched 6th)
-    16: dict(thru=4, up=-2),   # Hugo v Collie -- Collie 2 up thru 4
-    15: dict(thru=6, up=+1),   # Rusty v Sean Conlon -- Rusty 1 up thru 6
-    12: dict(thru=6, up=+1),   # Ben Caughey v Andy -- Ben 1 up thru 6
+    8:  dict(thru=2, up=+1),   # Jonto v Sean McDermott -- Jonto 1 up thru 2
 }
 
 # player name (exactly as in M) -> dict(thru=holes played, pts=net Stableford points so far),
