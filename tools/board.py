@@ -438,7 +438,7 @@ LIVE_RESULTS = {
     6:  dict(done=1, up=+1, res="1 up"),  # Fintan Flynn v Ray McCarron -- Fintan won 1 up (won the 18th)
     4:  dict(done=1, up=+4, res="4&3"),  # Frank v Marty -- Frank won 4&3
     17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
-    3:  dict(thru=12, up=0),   # Lochlann v Leo -- A/S thru 12 (Lochlann's shot won the 7th; Leo eagled the 11th)
+    3:  dict(done=1, up=-1, res="1 up"),  # Lochlann v Leo -- Leo won 1 up (won the 18th)
     18: dict(thru=12, up=+2),  # Conan v Conor -- Conan 2 up thru 12 (Conan's shot won the 7th)
     19: dict(thru=16, up=+1),  # Dom v Buff -- Dom 1 up thru 16 (Buff won 14th, 15th, 16th)
     1:  dict(thru=13, up=-3),  # Ger v Diarmuid King -- Diarmuid 3 up thru 13 (Ger's shot won the 7th)
@@ -461,8 +461,8 @@ LIVE_SF = {
     'Marty':             dict(thru=18, pts=34),
     'Ronnie Flanagan':   dict(thru=12, pts=8),   # scratched 1-3, 6, 8-10
     'Seamus McKiernan':  dict(thru=12, pts=26),
-    'Lochlann':          dict(thru=12, pts=22),
-    'Leo':               dict(thru=12, pts=23),
+    'Lochlann':          dict(thru=18, pts=35),   # scratched 15th
+    'Leo':               dict(thru=18, pts=35),
     'Conan':             dict(thru=12, pts=10),
     'Conor':             dict(thru=12, pts=13),
     'Dom':               dict(thru=16, pts=16),
