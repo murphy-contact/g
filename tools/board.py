@@ -437,7 +437,7 @@ LIVE_RESULTS = {
     12: dict(done=1, up=+7, res="7&6"),  # Ben Caughey v Andy -- Ben won 7&6
     6:  dict(thru=12, up=+2),  # Fintan Flynn v Ray McCarron -- Fintan 2 up thru 12 (Ray's shot won the 12th)
     4:  dict(thru=10, up=+5),  # Frank v Marty -- Frank 5 up thru 10
-    17: dict(thru=9, up=-6),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 6 up thru 9 (shot halved the 7th)
+    17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
     3:  dict(thru=10, up=0),   # Lochlann v Leo -- A/S thru 10 (Lochlann's shot won the 7th)
     18: dict(thru=6, up=0),    # Conan v Conor -- A/S thru 6
     19: dict(thru=9, up=+2),   # Dom v Buff -- Dom 2 up thru 9 (Buff's shot halved the 7th)
