@@ -433,12 +433,14 @@ LIVE_RESULTS = {
     18: dict(thru=3, up=+3),   # Conan v Conor -- Conan 3 up thru 3
     19: dict(thru=3, up=+1),   # Dom v Buff -- Dom 1 up thru 3
     1:  dict(thru=2, up=-1),   # Ger v Diarmuid King -- Diarmuid 1 up thru 2
+    20: dict(thru=2, up=0),    # Johnny McManus v Goof -- A/S thru 2
+    2:  dict(thru=3, up=+2),   # Shay v Jock -- Shay 2 up thru 3
     5:  dict(thru=6, up=+1),   # Brendy v Raymond McGloin -- Brendy 1 up thru 6
     7:  dict(thru=6, up=0),    # Jamie McCaffrey v Blobby -- A/S thru 6
     14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6 (Kealan scratched 6th)
     16: dict(thru=4, up=-2),   # Hugo v Collie -- Collie 2 up thru 4
-    15: dict(thru=3, up=+1),   # Rusty v Sean Conlon -- Rusty 1 up thru 3
-    12: dict(thru=3, up=-1),   # Ben Caughey v Andy -- Andy 1 up thru 3
+    15: dict(thru=6, up=+1),   # Rusty v Sean Conlon -- Rusty 1 up thru 6
+    12: dict(thru=6, up=+1),   # Ben Caughey v Andy -- Ben 1 up thru 6
 }
 
 # player name (exactly as in M) -> dict(thru=holes played, pts=net Stableford points so far),
@@ -460,6 +462,10 @@ LIVE_SF = {
     'Buff':              dict(thru=3, pts=3),
     'Ger':               dict(thru=2, pts=3),
     'Diarmuid King':     dict(thru=2, pts=4),
+    'Johnny McManus':    dict(thru=2, pts=3),
+    'Goof':              dict(thru=2, pts=3),
+    'Shay':              dict(thru=3, pts=9),
+    'Jock':              dict(thru=3, pts=5),
     'Brendy':            dict(thru=6, pts=11),
     'Raymond McGloin':   dict(thru=6, pts=10),
     'Jamie McCaffrey':   dict(thru=6, pts=8),
@@ -468,10 +474,10 @@ LIVE_SF = {
     'Mully':             dict(thru=6, pts=7),
     'Hugo':              dict(thru=4, pts=3),
     'Collie':            dict(thru=4, pts=7),
-    'Rusty':             dict(thru=3, pts=3),
-    'Sean Conlon':       dict(thru=3, pts=2),
-    'Ben Caughey':       dict(thru=3, pts=6),
-    'Andy':              dict(thru=3, pts=6),
+    'Rusty':             dict(thru=6, pts=6),
+    'Sean Conlon':       dict(thru=6, pts=6),
+    'Ben Caughey':       dict(thru=6, pts=13),
+    'Andy':              dict(thru=6, pts=8),
 }
 
 if LIVE_ON:
