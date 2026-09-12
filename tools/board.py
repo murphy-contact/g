@@ -492,7 +492,7 @@ LIVE_REPORTS = {
     8:  "Sean beat Jonto, the Europe captain, <b>5&amp;4</b>. Sean&rsquo;s 3 at the 6th, a net eagle, put him 3 up, and though he scratched the 7th the next four holes were halved. Jonto scratched the 5th and the 12th, and Sean&rsquo;s 5s at the 13th and 14th ended it with four to play. Jonto never got to use his one shot at the 15th.",
     9:  "Govy and Johnny <b>halved</b> after one of the day&rsquo;s great escapes. Johnny&rsquo;s shot at the 12th put him ahead and his shot at the 15th saved a half when Govy had a par. A 5 at the 16th made Johnny dormie two up. Govy then won the 17th with an 8 to a 9 and the 18th with a 6 to an 8 to steal the half. Both finished on 29 points.",
     12: "Ben beat Andy <b>7&amp;6</b>, the biggest margin of the day. Ben was 4 up at the turn, his shot winning the 7th, then took the 10th, 11th and 12th to end it with six to play. He kept going and finished on 35 points, the best guest card. Andy finished on 23.",
-    13: "Ingy beat Jamie <b>6&amp;4</b>. Jamie led once, after the 4th, before Ingy won the 5th, 6th, 7th and 8th in a row and added the 9th, 10th and 11th to go 6 up. Jamie won the 12th, the 13th was halved, and Ingy&rsquo;s 6 at the 14th closed it out. Ingy was on 20 points through 16.",
+    13: "Ingy beat Jamie <b>6&amp;4</b>. Jamie led once, after the 4th, before Ingy won the 5th, 6th, 7th and 8th in a row and added the 9th, 10th and 11th to go 6 up. Jamie won the 12th, the 13th was halved, and Ingy&rsquo;s 6 at the 14th closed it out. Ingy finished on 22 points, Jamie on 12.",
     14: "Mully beat Kealan <b>4&amp;2</b>. Mully was 3 up after Kealan scratched the 6th, then Kealan&rsquo;s shots at the 7th and 8th won both holes to cut it to one. Mully&rsquo;s 3 at the 10th and 5 at the 11th restored the lead, Kealan&rsquo;s shot won the 12th, and Mully&rsquo;s net 3 at the 14th made it two again. Kealan scratched the 15th and Mully&rsquo;s 6 at the 16th finished it. Mully 26 points, Kealan 23.",
     15: "Sean beat Rusty <b>2 up</b> by winning the last three holes. Rusty was 2 up at the turn and 1 up with three to play after his shot won the 15th. Sean&rsquo;s 7 at the 16th squared it, his 7 at the 17th put him ahead, and his 6 at the last sealed it. Both finished on 19 points.",
     16: "Collie beat Hugo <b>3&amp;1</b>, and his shots did the work. Collie&rsquo;s shot halved the 7th, won the 12th and halved the 15th. Hugo won the 9th, 10th, 13th and 14th on gross but never got level. Collie&rsquo;s 6 at the 16th made him dormie and his 7 at the 17th beat an 8. Hugo 17 points, Collie 18.",
@@ -557,8 +557,8 @@ LIVE_SF = {
     'Goof':              dict(thru=18, pts=26),
     'Shay':              dict(thru=18, pts=37),
     'Jock':              dict(thru=18, pts=31),
-    'Jamie Teague':      dict(thru=16, pts=10),
-    'Ingy':              dict(thru=16, pts=20),
+    'Jamie Teague':      dict(thru=18, pts=12),
+    'Ingy':              dict(thru=18, pts=22),
     'Jonto':             dict(thru=14, pts=13),   # scratched 5th, 12th
     'Sean McDermott':    dict(thru=14, pts=20),   # scratched 7th
     'Ryan McDermott':    dict(thru=14, pts=19),
