@@ -483,6 +483,7 @@ MOCK_REPORTS = {
 # Real match write-ups for the live page, keyed by match number. Only finished matches are
 # rendered; add one here when a match is entered as done.
 LIVE_REPORTS = {
+    1:  "Ger and Diarmuid <b>halved</b> a match Diarmuid led by five after nine holes. Diarmuid won the 2nd, 3rd, 4th and 5th with pars, Ger&rsquo;s shot won the 7th, and Diarmuid&rsquo;s 4s at the 8th and 9th had him 5 up at the turn. Ger won the 10th with a par and the 11th with a birdie, then took the 14th, 15th and 16th, his shot deciding the 15th, to square it with two to play. Ger&rsquo;s 4 at the 17th put him ahead and Diarmuid&rsquo;s par at the last levelled it. Ger 33 points, Diarmuid 30.",
     2:  "Shay beat Jock <b>4&amp;3</b> and turned in the best member card of the day. He was 3 up after seven, his shot winning the 7th, before Jock won the 8th, 9th and 10th on gross to square it. Shay&rsquo;s eagle 3 at the par-5 11th put him back in front and he never looked back, winning the 12th, 14th and 15th. He finished on 37 points with a birdie at the 17th; Jock&rsquo;s birdie at the last gave him 31.",
     3:  "Lochlann beat Leo <b>1 up</b> in the match of the day, winning the last three holes. The lead changed hands four times on the front nine, Lochlann&rsquo;s shot winning the 7th and Leo&rsquo;s eagle at the 11th answering it. Leo went 2 up when Lochlann scratched the 15th. Lochlann won the 16th, birdied the 17th to square it, and his 4 at the last beat Leo&rsquo;s 5. Lochlann 35 points, Leo 33.",
     4:  "Frank beat Marty <b>4&amp;3</b> in the low-handicap match. Frank was 5 up after ten holes, his birdie at the 9th the pick of them, with his shot at the 7th halving a hole Marty had won on gross. Marty won the 12th and birdied the 14th to get back to 3 down, but Frank&rsquo;s 7 at the 15th still beat an 8. Frank finished on 35 points, Marty on 34 with a birdie at the last.",
@@ -527,7 +528,7 @@ LIVE_RESULTS = {
     3:  dict(done=1, up=+1, res="1 up"),  # Lochlann v Leo -- Lochlann won 1 up (birdied 17th to square, won 18th 4 v 5)
     18: dict(done=1, up=+3, res="3&2"),  # Conan v Conor -- Conan won 3&2 (Conan's shots won 7th, halved 15th)
     19: dict(done=1, up=+2, res="2&1"),  # Dom v Buff -- Dom won 2&1 (Buff won 14th-16th; Buff's shots halved 7th, won 12th and 15th)
-    1:  dict(thru=16, up=0),   # Ger v Diarmuid King -- A/S thru 16 (Ger's shots won the 7th and 15th; Ger won 14th-16th)
+    1:  dict(done=1, up=0, res="halved"),  # Ger v Diarmuid King -- halved (Ger won 17th 4 v 7, Diarmuid won 18th 4 v 5)
     20: dict(done=1, up=-2, res="2 up"),  # Johnny McManus v Goof -- Goof won 2 up (won 16th, 17th, 18th)
     2:  dict(done=1, up=+4, res="4&3"),  # Shay v Jock -- Shay won 4&3
     13: dict(done=1, up=-6, res="6&4"),  # Jamie Teague v Ingy -- Ingy won 6&4
@@ -553,8 +554,8 @@ LIVE_SF = {
     'Conor':             dict(thru=18, pts=22),   # scratched 17th
     'Dom':               dict(thru=18, pts=17),
     'Buff':              dict(thru=18, pts=6),
-    'Ger':               dict(thru=16, pts=28),
-    'Diarmuid King':     dict(thru=16, pts=27),
+    'Ger':               dict(thru=18, pts=33),
+    'Diarmuid King':     dict(thru=18, pts=30),
     'Johnny McManus':    dict(thru=18, pts=21),
     'Goof':              dict(thru=18, pts=26),
     'Shay':              dict(thru=18, pts=37),
