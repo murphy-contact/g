@@ -408,7 +408,10 @@ LIVE_ON = True
 # match no -> dict(thru=N, up=U) in progress, or dict(done=1, up=U, res="3&2") finished.
 # up > 0 Europe ahead, up < 0 USA ahead, up == 0 all square. Missing match = not yet reported.
 LIVE_RESULTS = {
-    9: dict(thru=2, up=0),    # Govy v Johnny McCafferty -- all square thru 2 (Govy won 1st, Johnny won 2nd)
+    9:  dict(thru=2, up=0),    # Govy v Johnny McCafferty -- A/S thru 2
+    5:  dict(thru=3, up=0),    # Brendy v Raymond McGloin -- A/S thru 3
+    7:  dict(thru=2, up=+1),   # Jamie McCaffrey v Blobby -- Jamie (EUR) 1 up thru 2
+    14: dict(thru=2, up=0),    # Kealan v Mully -- A/S thru 2
 }
 
 if LIVE_ON:
