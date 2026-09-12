@@ -430,7 +430,7 @@ LIVE_ON = True
 LIVE_RESULTS = {
     9:  dict(thru=9, up=+1),   # Govy v Johnny McCafferty -- Govy 1 up thru 9
     5:  dict(thru=9, up=+2),   # Brendy v Raymond McGloin -- Brendy 2 up thru 9
-    7:  dict(thru=8, up=+2),   # Jamie McCaffrey v Blobby -- Jamie 2 up thru 8
+    7:  dict(thru=10, up=+1),  # Jamie McCaffrey v Blobby -- Jamie 1 up thru 10
     14: dict(thru=9, up=-1),   # Kealan v Mully -- Mully 1 up thru 9 (shot won the 8th)
     16: dict(thru=8, up=-3),   # Hugo v Collie -- Collie 3 up thru 8 (shot halved the 7th)
     15: dict(thru=9, up=+2),   # Rusty v Sean Conlon -- Rusty 2 up thru 9
@@ -445,7 +445,7 @@ LIVE_RESULTS = {
     20: dict(thru=2, up=0),    # Johnny McManus v Goof -- A/S thru 2
     2:  dict(thru=6, up=+2),   # Shay v Jock -- Shay 2 up thru 6
     13: dict(thru=4, up=+1),   # Jamie Teague v Ingy -- Teague 1 up thru 4
-    8:  dict(thru=3, up=0),    # Jonto v Sean McDermott -- A/S thru 3
+    8:  dict(thru=5, up=-2),   # Jonto v Sean McDermott -- Sean 2 up thru 5 (Jonto scratched 5th)
     10: dict(thru=4, up=+2),   # Ryan McDermott v Caolan Swift -- Ryan 2 up thru 4
     11: dict(thru=4, up=+1),   # Micky v Jimmy -- Micky 1 up thru 4
 }
@@ -475,16 +475,16 @@ LIVE_SF = {
     'Jock':              dict(thru=6, pts=11),
     'Jamie Teague':      dict(thru=4, pts=5),
     'Ingy':              dict(thru=4, pts=5),
-    'Jonto':             dict(thru=3, pts=4),
-    'Sean McDermott':    dict(thru=3, pts=3),
+    'Jonto':             dict(thru=5, pts=5),   # scratched 5th
+    'Sean McDermott':    dict(thru=5, pts=7),
     'Ryan McDermott':    dict(thru=4, pts=10),
     'Caolan Swift':      dict(thru=4, pts=8),
     'Micky':             dict(thru=4, pts=7),
     'Jimmy':             dict(thru=4, pts=8),
     'Brendy':            dict(thru=9, pts=16),
     'Raymond McGloin':   dict(thru=9, pts=13),
-    'Jamie McCaffrey':   dict(thru=8, pts=12),
-    'Blobby':            dict(thru=8, pts=10),
+    'Jamie McCaffrey':   dict(thru=10, pts=14),
+    'Blobby':            dict(thru=10, pts=14),
     'Kealan':            dict(thru=9, pts=12),  # scratched 6th
     'Mully':             dict(thru=9, pts=9),
     'Hugo':              dict(thru=8, pts=7),
