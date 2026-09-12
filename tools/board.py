@@ -432,11 +432,11 @@ LIVE_RESULTS = {
     5:  dict(thru=9, up=+2),   # Brendy v Raymond McGloin -- Brendy 2 up thru 9
     7:  dict(thru=8, up=+2),   # Jamie McCaffrey v Blobby -- Jamie 2 up thru 8
     14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6
-    16: dict(thru=6, up=-2),   # Hugo v Collie -- Collie 2 up thru 6
+    16: dict(thru=8, up=-3),   # Hugo v Collie -- Collie 3 up thru 8 (shot halved the 7th)
     15: dict(thru=9, up=+2),   # Rusty v Sean Conlon -- Rusty 2 up thru 9
     12: dict(thru=9, up=+4),   # Ben Caughey v Andy -- Ben 4 up thru 9 (shot won the 7th)
     6:  dict(thru=6, up=+3),   # Fintan Flynn v Ray McCarron -- Fintan 3 up thru 6
-    4:  dict(thru=6, up=+2),   # Frank v Marty -- Frank 2 up thru 6
+    4:  dict(thru=8, up=+3),   # Frank v Marty -- Frank 3 up thru 8 (shot halved the 7th)
     17: dict(thru=6, up=-4),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 4 up thru 6
     3:  dict(thru=6, up=-1),   # Lochlann v Leo -- Leo 1 up thru 6
     18: dict(thru=6, up=0),    # Conan v Conor -- A/S thru 6
@@ -457,8 +457,8 @@ LIVE_SF = {
     'Johnny McCafferty': dict(thru=9, pts=13),  # scratched the 1st and 5th; net eagle 7th
     'Fintan Flynn':      dict(thru=6, pts=12),
     'Ray McCarron':      dict(thru=6, pts=7),   # scratched 5th, 6th
-    'Frank':             dict(thru=6, pts=15),
-    'Marty':             dict(thru=6, pts=11),
+    'Frank':             dict(thru=8, pts=19),
+    'Marty':             dict(thru=8, pts=15),
     'Ronnie Flanagan':   dict(thru=6, pts=4),   # scratched 1st-3rd and 6th
     'Seamus McKiernan':  dict(thru=6, pts=14),
     'Lochlann':          dict(thru=6, pts=12),
@@ -487,8 +487,8 @@ LIVE_SF = {
     'Blobby':            dict(thru=8, pts=10),
     'Kealan':            dict(thru=6, pts=6),   # scratched 6th
     'Mully':             dict(thru=6, pts=7),
-    'Hugo':              dict(thru=6, pts=5),
-    'Collie':            dict(thru=6, pts=9),
+    'Hugo':              dict(thru=8, pts=7),
+    'Collie':            dict(thru=8, pts=11),
     'Rusty':             dict(thru=9, pts=9),
     'Sean Conlon':       dict(thru=9, pts=8),
     'Ben Caughey':       dict(thru=9, pts=21),
