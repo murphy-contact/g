@@ -499,6 +499,7 @@ LIVE_REPORTS = {
     17: "Seamus beat Ronnie <b>7&amp;6</b>. Ronnie scratched seven of the first ten holes, and Seamus&rsquo;s 2 at the 2nd and pars at the 6th, 8th and 9th had him 7 up at the 10th. Ronnie&rsquo;s shots halved the 7th and the 12th, and the 12th ended it. Seamus was on 26 points through 12.",
     18: "Conan beat Conor <b>3&amp;2</b> in a match neither man led by more than two. Nobody scored at the 1st or 2nd. Conan&rsquo;s shot won the 7th, the lead swapped through the 8th, 9th and 10th, and Conan&rsquo;s 7s at the 11th and 12th put him 2 up. His shot halved the 15th after Conor won the 14th, and his 8 at the 16th beat a 13 to finish it. Conan 19 points, Conor 22.",
     19: "Dom beat Buff <b>2&amp;1</b>, having been 4 up after eleven and 1 up after sixteen. Buff&rsquo;s shot halved the 7th and won the 12th, and he won the 14th, 15th and 16th on the trot, the 15th on his last shot. Dom&rsquo;s 7 at the 17th against a 10 ended the comeback. Dom 17 points, Buff 6.",
+    10: "Ryan beat Caolan <b>2 up</b> by winning the last two holes. Ryan was 2 up after four and Caolan had squared it by the turn, her shot winning the 7th. Ryan won the 10th, 11th and 12th, Caolan&rsquo;s par at the 13th and her 5 at the 14th got two back, and her shot at the 15th squared it again. After a half at the 16th, Ryan&rsquo;s 5 at the 17th and par at the last won it. Ryan 27 points, Caolan 30.",
     11: "Micky beat Jimmy, the USA captain, <b>3&amp;1</b>, and it was the point that won the Cup. Jimmy won four holes in a row from the 5th to lead by two at the turn. Micky won the 10th and 11th to square it, Jimmy took the 12th, and Micky won the 13th and 14th to go ahead for good. After a half at the 15th, Micky&rsquo;s 6 at the 16th and 5 at the 17th finished it with a hole to spare. Micky 25 points, Jimmy 24.",
     20: "Goof beat Johnny <b>2 up</b> by winning the last three holes. Goof was 3 up after seven, Johnny won the 8th, 9th and 10th to square it, and Johnny was 1 up with three to play after taking the 15th. Goof&rsquo;s 7 at the 16th squared it, his 5 at the 17th put him ahead, and his 6 at the last won it. Both play off 36, so every hole carried two shots each. Goof 26 points, Johnny 21.",
 }
@@ -531,7 +532,7 @@ LIVE_RESULTS = {
     2:  dict(done=1, up=+4, res="4&3"),  # Shay v Jock -- Shay won 4&3
     13: dict(done=1, up=-6, res="6&4"),  # Jamie Teague v Ingy -- Ingy won 6&4
     8:  dict(done=1, up=-5, res="5&4"),  # Jonto v Sean McDermott -- Sean won 5&4
-    10: dict(thru=14, up=+1),  # Ryan McDermott v Caolan Swift -- Ryan 1 up thru 14
+    10: dict(done=1, up=+2, res="2 up"),  # Ryan McDermott v Caolan Swift -- Ryan won 2 up (won 17th and 18th from A/S)
     11: dict(done=1, up=+3, res="3&1"),  # Micky v Jimmy -- Micky won 3&1 from 2 down at the turn; clinched the Cup
 }
 
@@ -562,8 +563,8 @@ LIVE_SF = {
     'Ingy':              dict(thru=18, pts=22),
     'Jonto':             dict(thru=14, pts=13),   # scratched 5th, 12th
     'Sean McDermott':    dict(thru=14, pts=20),   # scratched 7th
-    'Ryan McDermott':    dict(thru=14, pts=19),
-    'Caolan Swift':      dict(thru=14, pts=23),
+    'Ryan McDermott':    dict(thru=18, pts=27),
+    'Caolan Swift':      dict(thru=18, pts=30),
     'Micky':             dict(thru=18, pts=25),
     'Jimmy':             dict(thru=18, pts=24),
     'Brendy':            dict(thru=18, pts=32),
