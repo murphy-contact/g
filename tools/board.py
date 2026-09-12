@@ -428,7 +428,7 @@ LIVE_ON = True
 # up > 0 Europe ahead, up < 0 USA ahead, 0 all square.
 # match no -> dict(thru=N, up=U) in progress, or dict(done=1, up=U, res="3&2") finished.
 LIVE_RESULTS = {
-    9:  dict(thru=9, up=+1),   # Govy v Johnny McCafferty -- Govy 1 up thru 9
+    9:  dict(thru=12, up=-1),  # Govy v Johnny McCafferty -- Johnny 1 up thru 12 (Govy scratched 10th; Johnny's shot won the 12th)
     5:  dict(thru=9, up=+2),   # Brendy v Raymond McGloin -- Brendy 2 up thru 9
     7:  dict(thru=10, up=+1),  # Jamie McCaffrey v Blobby -- Jamie 1 up thru 10
     14: dict(thru=11, up=-3),  # Kealan v Mully -- Mully 3 up thru 11 (10th read as Mully 3, Kealan 5; Kealan scratched 6th)
@@ -453,8 +453,8 @@ LIVE_RESULTS = {
 # player name (exactly as in M) -> dict(thru=holes played, pts=net Stableford points so far),
 # computed off each player's full handicap on the Yellow stroke index. Missing = no card yet.
 LIVE_SF = {
-    'Govy':              dict(thru=9, pts=14),
-    'Johnny McCafferty': dict(thru=9, pts=13),  # scratched the 1st and 5th; net eagle 7th
+    'Govy':              dict(thru=12, pts=19),   # scratched 10th
+    'Johnny McCafferty': dict(thru=12, pts=20),   # scratched 1st, 5th
     'Fintan Flynn':      dict(thru=9, pts=17),
     'Ray McCarron':      dict(thru=9, pts=12),  # scratched 5th, 6th
     'Frank':             dict(thru=8, pts=19),
