@@ -428,7 +428,7 @@ LIVE_ON = True
 # up > 0 Europe ahead, up < 0 USA ahead, 0 all square.
 # match no -> dict(thru=N, up=U) in progress, or dict(done=1, up=U, res="3&2") finished.
 LIVE_RESULTS = {
-    9:  dict(thru=14, up=-1),  # Govy v Johnny McCafferty -- Johnny 1 up thru 14 (14th read as Govy 7, Johnny 6)
+    9:  dict(thru=14, up=-1),  # Govy v Johnny McCafferty -- Johnny 1 up thru 14 (14th confirmed Govy 7, Johnny 6)
     5:  dict(thru=12, up=+2),  # Brendy v Raymond McGloin -- Brendy 2 up thru 12
     7:  dict(thru=12, up=+3),  # Jamie McCaffrey v Blobby -- Jamie 3 up thru 12
     14: dict(thru=12, up=-2),  # Kealan v Mully -- Mully 2 up thru 12 (Kealan's shot won the 12th; Kealan scratched 6th)
