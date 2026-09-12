@@ -433,8 +433,8 @@ LIVE_RESULTS = {
     7:  dict(thru=8, up=+2),   # Jamie McCaffrey v Blobby -- Jamie 2 up thru 8
     14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6
     16: dict(thru=6, up=-2),   # Hugo v Collie -- Collie 2 up thru 6
-    15: dict(thru=6, up=+1),   # Rusty v Sean Conlon -- Rusty 1 up thru 6
-    12: dict(thru=6, up=+1),   # Ben Caughey v Andy -- Ben 1 up thru 6
+    15: dict(thru=9, up=+2),   # Rusty v Sean Conlon -- Rusty 2 up thru 9
+    12: dict(thru=9, up=+4),   # Ben Caughey v Andy -- Ben 4 up thru 9 (shot won the 7th)
     6:  dict(thru=6, up=+3),   # Fintan Flynn v Ray McCarron -- Fintan 3 up thru 6
     4:  dict(thru=6, up=+2),   # Frank v Marty -- Frank 2 up thru 6
     17: dict(thru=6, up=-4),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 4 up thru 6
@@ -489,10 +489,10 @@ LIVE_SF = {
     'Mully':             dict(thru=6, pts=7),
     'Hugo':              dict(thru=6, pts=5),
     'Collie':            dict(thru=6, pts=9),
-    'Rusty':             dict(thru=6, pts=6),
-    'Sean Conlon':       dict(thru=6, pts=6),
-    'Ben Caughey':       dict(thru=6, pts=13),
-    'Andy':              dict(thru=6, pts=8),
+    'Rusty':             dict(thru=9, pts=9),
+    'Sean Conlon':       dict(thru=9, pts=8),
+    'Ben Caughey':       dict(thru=9, pts=21),
+    'Andy':              dict(thru=9, pts=13),
 }
 
 if LIVE_ON:
