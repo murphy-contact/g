@@ -502,7 +502,7 @@ LIVE_REPORTS = {
     5:  "Brendy beat Raymond <b>3&amp;1</b> and was never behind after the 3rd. Two up at the turn, he lost the 10th, then won the 12th and a par at the 13th made it three. His shot at the 15th halved a hole Raymond had won on gross and left him dormie. Raymond took the 16th, Brendy&rsquo;s par at the 17th closed it. Brendy 32 points, Raymond 28.",
     6:  "Fintan beat Ray <b>1 up</b> at the last after leading by three at the turn. Ray&rsquo;s shot won him the 12th, pars at the 13th and 14th squared it, and his shot at the 15th halved that hole when Fintan had a par. Fintan won the 16th, Ray&rsquo;s par at the 17th levelled it again, and Fintan&rsquo;s par at the 18th won it. Fintan finished on 34 points, Ray on 32.",
     7:  "Jamie beat Blobby <b>3&amp;1</b>. Level after nine holes of swapping the lead, Jamie went 3 up when Blobby ran up a 10 at the 11th and a 6 at the 12th. Blobby won the 14th and 16th but Jamie won the 15th between them and was dormie with two to play. A 5 to a 6 at the 17th finished it. Jamie 27 points, Blobby 26.",
-    8:  "Sean beat Jonto, the Europe captain, <b>5&amp;4</b>. Sean&rsquo;s 3 at the 6th, a net eagle, put him 3 up, and though he scratched the 7th the next four holes were halved. Jonto scratched the 5th and the 12th, and Sean&rsquo;s 5s at the 13th and 14th ended it with four to play. Jonto never got to use his one shot at the 15th.",
+    8:  "Sean beat Jonto, the Europe captain, <b>5&amp;4</b>. Sean&rsquo;s 3 at the 6th, a net eagle, put him 3 up, and though he scratched the 7th the next four holes were halved. Jonto scratched the 5th and the 12th, and Sean&rsquo;s 5s at the 13th and 14th ended it with four to play. Jonto never got to use his one shot at the 15th. Sean finished on 26 points, Jonto on 16.",
     9:  "Govy and Johnny <b>halved</b> after one of the day&rsquo;s great escapes. Johnny&rsquo;s shot at the 12th put him ahead and his shot at the 15th saved a half when Govy had a par. A 5 at the 16th made Johnny dormie two up. Govy then won the 17th with an 8 to a 9 and the 18th with a 6 to an 8 to steal the half. Both finished on 29 points.",
     12: "Ben beat Andy <b>7&amp;6</b>, the biggest margin of the day. Ben was 4 up at the turn, his shot winning the 7th, then took the 10th, 11th and 12th to end it with six to play. He kept going and finished on 35 points, the best guest card. Andy finished on 23.",
     13: "Ingy beat Jamie <b>6&amp;4</b>. Jamie led once, after the 4th, before Ingy won the 5th, 6th, 7th and 8th in a row and added the 9th, 10th and 11th to go 6 up. Jamie won the 12th, the 13th was halved, and Ingy&rsquo;s 6 at the 14th closed it out. Ingy finished on 22 points, Jamie on 12.",
@@ -572,8 +572,8 @@ LIVE_SF = {
     'Jock':              dict(thru=18, pts=31),
     'Jamie Teague':      dict(thru=18, pts=12),
     'Ingy':              dict(thru=18, pts=22),
-    'Jonto':             dict(thru=14, pts=13),   # scratched 5th, 12th
-    'Sean McDermott':    dict(thru=14, pts=20),   # scratched 7th
+    'Jonto':             dict(thru=18, pts=16),   # scratched 5th, 12th
+    'Sean McDermott':    dict(thru=18, pts=26),   # scratched 7th
     'Ryan McDermott':    dict(thru=18, pts=27),
     'Caolan Swift':      dict(thru=18, pts=30),
     'Micky':             dict(thru=18, pts=25),
