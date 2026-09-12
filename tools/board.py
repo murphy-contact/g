@@ -430,15 +430,15 @@ LIVE_ON = True
 LIVE_RESULTS = {
     9:  dict(thru=12, up=-1),  # Govy v Johnny McCafferty -- Johnny 1 up thru 12 (Govy scratched 10th; Johnny's shot won the 12th)
     5:  dict(thru=12, up=+2),  # Brendy v Raymond McGloin -- Brendy 2 up thru 12
-    7:  dict(thru=10, up=+1),  # Jamie McCaffrey v Blobby -- Jamie 1 up thru 10
-    14: dict(thru=11, up=-3),  # Kealan v Mully -- Mully 3 up thru 11 (10th read as Mully 3, Kealan 5; Kealan scratched 6th)
+    7:  dict(thru=12, up=+3),  # Jamie McCaffrey v Blobby -- Jamie 3 up thru 12
+    14: dict(thru=12, up=-2),  # Kealan v Mully -- Mully 2 up thru 12 (Kealan's shot won the 12th; Kealan scratched 6th)
     16: dict(thru=10, up=-1),  # Hugo v Collie -- Collie 1 up thru 10
     15: dict(thru=9, up=+2),   # Rusty v Sean Conlon -- Rusty 2 up thru 9
     12: dict(thru=9, up=+4),   # Ben Caughey v Andy -- Ben 4 up thru 9 (shot won the 7th)
     6:  dict(thru=9, up=+3),   # Fintan Flynn v Ray McCarron -- Fintan 3 up thru 9
     4:  dict(thru=10, up=+5),  # Frank v Marty -- Frank 5 up thru 10
     17: dict(thru=9, up=-6),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 6 up thru 9 (shot halved the 7th)
-    3:  dict(thru=6, up=-1),   # Lochlann v Leo -- Leo 1 up thru 6
+    3:  dict(thru=10, up=0),   # Lochlann v Leo -- A/S thru 10 (Lochlann's shot won the 7th)
     18: dict(thru=6, up=0),    # Conan v Conor -- A/S thru 6
     19: dict(thru=6, up=+2),   # Dom v Buff -- Dom 2 up thru 6
     1:  dict(thru=5, up=-4),   # Ger v Diarmuid King -- Diarmuid 4 up thru 5
@@ -461,8 +461,8 @@ LIVE_SF = {
     'Marty':             dict(thru=10, pts=16),
     'Ronnie Flanagan':   dict(thru=9, pts=5),   # scratched 1-3, 6, 8, 9
     'Seamus McKiernan':  dict(thru=9, pts=22),
-    'Lochlann':          dict(thru=6, pts=12),
-    'Leo':               dict(thru=6, pts=13),
+    'Lochlann':          dict(thru=10, pts=18),
+    'Leo':               dict(thru=10, pts=17),
     'Conan':             dict(thru=6, pts=4),
     'Conor':             dict(thru=6, pts=9),
     'Dom':               dict(thru=6, pts=7),
@@ -483,10 +483,10 @@ LIVE_SF = {
     'Jimmy':             dict(thru=4, pts=8),
     'Brendy':            dict(thru=12, pts=22),
     'Raymond McGloin':   dict(thru=12, pts=18),
-    'Jamie McCaffrey':   dict(thru=10, pts=14),
-    'Blobby':            dict(thru=10, pts=14),
-    'Kealan':            dict(thru=11, pts=15),   # scratched 6th
-    'Mully':             dict(thru=11, pts=15),
+    'Jamie McCaffrey':   dict(thru=12, pts=18),
+    'Blobby':            dict(thru=12, pts=16),
+    'Kealan':            dict(thru=12, pts=17),   # scratched 6th
+    'Mully':             dict(thru=12, pts=17),
     'Hugo':              dict(thru=10, pts=9),
     'Collie':            dict(thru=10, pts=11),
     'Rusty':             dict(thru=9, pts=9),
