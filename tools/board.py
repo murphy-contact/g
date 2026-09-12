@@ -133,8 +133,9 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   overflow:hidden; position:relative; display:flex; }
 .bar__e { background:var(--home); height:100%; } .bar__a { background:var(--away); height:100%; margin-left:auto; }
 .bar__ctr { background:var(--gold); bottom:-4px; left:50%; position:absolute; top:-4px; width:2.5px; transform:translateX(-1px); }
-.hl { color:var(--gold); font-family:var(--display); font-size:1.55rem; font-weight:700; letter-spacing:0.06em;
-  line-height:1.1; margin-bottom:0.7rem; text-align:center; text-transform:uppercase; }
+.hl { color:var(--gold); font-family:var(--display); font-size:clamp(2rem, 9.4vw, 2.7rem); font-weight:700;
+  letter-spacing:0.05em; line-height:1.05; margin:0.1rem 0 0.9rem; text-align:center; text-transform:uppercase; }
+.hl__s { white-space:nowrap; }
 .cap { color:rgba(255,255,255,0.8); font-size:0.76rem; margin-top:0.55rem; text-align:center; }
 .cap b { color:var(--gold); font-weight:700; }
 
@@ -401,7 +402,7 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
             winner = 'Europe win the Cup' if pe > pa else ('USA win the Cup' if pa > pe else 'The Cup is tied')
             stamp=f'<span class="dot dot--pre" aria-hidden="true"></span><span>Final</span><span class="when">{whenstr}</span>'
             cap=''
-            headline=f'\n  <p class="hl">{winner} {frac(pe)} &ndash; {frac(pa)}</p>'
+            headline=f'\n  <p class="hl">{winner} <span class="hl__s">{frac(pe)}&nbsp;&ndash;&nbsp;{frac(pa)}</span></p>'
             legend=f'<span class="pre">All twenty matches in</span>'
         else:
             stamp=f'<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">{whenstr}</span>'
