@@ -429,7 +429,7 @@ LIVE_ON = True
 # match no -> dict(thru=N, up=U) in progress, or dict(done=1, up=U, res="3&2") finished.
 LIVE_RESULTS = {
     9:  dict(thru=15, up=-1),  # Govy v Johnny McCafferty -- Johnny 1 up thru 15 (Johnny's shot won the 12th, halved the 15th)
-    5:  dict(thru=12, up=+2),  # Brendy v Raymond McGloin -- Brendy 2 up thru 12
+    5:  dict(thru=15, up=+3),  # Brendy v Raymond McGloin -- Brendy 3 up thru 15, dormie (Brendy's shot halved the 15th)
     7:  dict(thru=14, up=+2),  # Jamie McCaffrey v Blobby -- Jamie 2 up thru 14
     14: dict(thru=14, up=-2),  # Kealan v Mully -- Mully 2 up thru 14 (Kealan's shot won the 12th; Kealan scratched 6th)
     16: dict(thru=10, up=-1),  # Hugo v Collie -- Collie 1 up thru 10
@@ -481,8 +481,8 @@ LIVE_SF = {
     'Caolan Swift':      dict(thru=9, pts=18),
     'Micky':             dict(thru=4, pts=7),
     'Jimmy':             dict(thru=4, pts=8),
-    'Brendy':            dict(thru=12, pts=22),
-    'Raymond McGloin':   dict(thru=12, pts=18),
+    'Brendy':            dict(thru=15, pts=27),
+    'Raymond McGloin':   dict(thru=15, pts=22),
     'Jamie McCaffrey':   dict(thru=14, pts=20),
     'Blobby':            dict(thru=14, pts=19),
     'Kealan':            dict(thru=14, pts=19),   # scratched 6th
