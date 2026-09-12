@@ -440,11 +440,11 @@ LIVE_RESULTS = {
     17: dict(thru=6, up=-4),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 4 up thru 6
     3:  dict(thru=6, up=-1),   # Lochlann v Leo -- Leo 1 up thru 6
     18: dict(thru=6, up=0),    # Conan v Conor -- A/S thru 6
-    19: dict(thru=3, up=+1),   # Dom v Buff -- Dom 1 up thru 3
+    19: dict(thru=6, up=+2),   # Dom v Buff -- Dom 2 up thru 6
     1:  dict(thru=2, up=-1),   # Ger v Diarmuid King -- Diarmuid 1 up thru 2
     20: dict(thru=2, up=0),    # Johnny McManus v Goof -- A/S thru 2
-    2:  dict(thru=3, up=+2),   # Shay v Jock -- Shay 2 up thru 3
-    13: dict(thru=2, up=0),    # Jamie Teague v Ingy -- A/S thru 2
+    2:  dict(thru=6, up=+2),   # Shay v Jock -- Shay 2 up thru 6
+    13: dict(thru=4, up=+1),   # Jamie Teague v Ingy -- Teague 1 up thru 4
     8:  dict(thru=3, up=0),    # Jonto v Sean McDermott -- A/S thru 3
     10: dict(thru=4, up=+2),   # Ryan McDermott v Caolan Swift -- Ryan 2 up thru 4
     11: dict(thru=4, up=+1),   # Micky v Jimmy -- Micky 1 up thru 4
@@ -465,16 +465,16 @@ LIVE_SF = {
     'Leo':               dict(thru=6, pts=13),
     'Conan':             dict(thru=6, pts=4),
     'Conor':             dict(thru=6, pts=9),
-    'Dom':               dict(thru=3, pts=5),
-    'Buff':              dict(thru=3, pts=3),
+    'Dom':               dict(thru=6, pts=7),
+    'Buff':              dict(thru=6, pts=3),
     'Ger':               dict(thru=2, pts=3),
     'Diarmuid King':     dict(thru=2, pts=4),
     'Johnny McManus':    dict(thru=2, pts=3),
     'Goof':              dict(thru=2, pts=3),
-    'Shay':              dict(thru=3, pts=9),
-    'Jock':              dict(thru=3, pts=5),
-    'Jamie Teague':      dict(thru=2, pts=2),
-    'Ingy':              dict(thru=2, pts=3),
+    'Shay':              dict(thru=6, pts=15),
+    'Jock':              dict(thru=6, pts=11),
+    'Jamie Teague':      dict(thru=4, pts=5),
+    'Ingy':              dict(thru=4, pts=5),
     'Jonto':             dict(thru=3, pts=4),
     'Sean McDermott':    dict(thru=3, pts=3),
     'Ryan McDermott':    dict(thru=4, pts=10),
