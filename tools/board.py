@@ -435,6 +435,7 @@ LIVE_RESULTS = {
     1:  dict(thru=2, up=-1),   # Ger v Diarmuid King -- Diarmuid 1 up thru 2
     20: dict(thru=2, up=0),    # Johnny McManus v Goof -- A/S thru 2
     2:  dict(thru=3, up=+2),   # Shay v Jock -- Shay 2 up thru 3
+    13: dict(thru=2, up=0),    # Jamie Teague v Ingy -- A/S thru 2
     5:  dict(thru=6, up=+1),   # Brendy v Raymond McGloin -- Brendy 1 up thru 6
     7:  dict(thru=6, up=0),    # Jamie McCaffrey v Blobby -- A/S thru 6
     14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6 (Kealan scratched 6th)
@@ -466,6 +467,8 @@ LIVE_SF = {
     'Goof':              dict(thru=2, pts=3),
     'Shay':              dict(thru=3, pts=9),
     'Jock':              dict(thru=3, pts=5),
+    'Jamie Teague':      dict(thru=2, pts=2),
+    'Ingy':              dict(thru=2, pts=3),
     'Brendy':            dict(thru=6, pts=11),
     'Raymond McGloin':   dict(thru=6, pts=10),
     'Jamie McCaffrey':   dict(thru=6, pts=8),
