@@ -180,7 +180,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   font-weight:600; letter-spacing:0.08em; margin-top:0.1rem; padding:0; text-transform:uppercase; white-space:nowrap; }
 .rl::after { content:" ▾"; } .rl[aria-expanded="true"]::after { content:" ▴"; }
 .rl:hover, .rl:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
-.rp { color:var(--soft); font-size:0.9rem; grid-column:1 / -1; line-height:1.45; padding:0.45rem 0.75rem 0.6rem; }
+.rp { color:var(--soft); font-size:1rem; grid-column:1 / -1; line-height:1.5; padding:0.55rem 0.75rem 0.7rem; }
 .rp b { color:var(--ink); font-weight:600; }
 .rep p b { color:var(--ink); font-weight:600; }
 .note { color:var(--soft); font-size:0.82rem; padding:0.8rem 1rem 0; }
@@ -276,8 +276,6 @@ f'''    <li class="row">
             if done:
                 mid += f'<button class="rl" type="button" aria-expanded="false" aria-controls="rep-{no}">Report</button>'
                 rep = f'\n      <p class="rp" id="rep-{no}" hidden>{reports[no]}</p>'
-            else:
-                rep = f'\n      <details class="rep"><summary>Match report</summary><p>{reports[no]}</p></details>'
         rows.append(
 f'''    <li class="row">
       <div class="side side--h{hcls}"><span class="marg">{hmarg}</span><span class="nm">{e(hn)}</span></div>
