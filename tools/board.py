@@ -133,6 +133,8 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   overflow:hidden; position:relative; display:flex; }
 .bar__e { background:var(--home); height:100%; } .bar__a { background:var(--away); height:100%; margin-left:auto; }
 .bar__ctr { background:var(--gold); bottom:-4px; left:50%; position:absolute; top:-4px; width:2.5px; transform:translateX(-1px); }
+.hl { color:var(--gold); font-family:var(--display); font-size:1.55rem; font-weight:700; letter-spacing:0.06em;
+  line-height:1.1; margin-bottom:0.7rem; text-align:center; text-transform:uppercase; }
 .cap { color:rgba(255,255,255,0.8); font-size:0.76rem; margin-top:0.55rem; text-align:center; }
 .cap b { color:var(--gold); font-weight:700; }
 
@@ -386,6 +388,7 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
     TARGET=10.5; tick=TARGET/20*100; tickU=100-tick
     pe_pct=pe/20*100; pa_pct=pa/20*100
 
+    headline=''
     if mode=='pre':
         stamp='<span class="dot dot--pre" aria-hidden="true"></span><span>First tee 2:30 PM</span><span class="when">Saturday, September 12th</span>'
         cap='Twenty singles &middot; lead past the gold centre line &mdash; <b>10&frac12; wins</b>'
@@ -397,7 +400,8 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
         if final:
             winner = 'Europe win the Cup' if pe > pa else ('USA win the Cup' if pa > pe else 'The Cup is tied')
             stamp=f'<span class="dot dot--pre" aria-hidden="true"></span><span>Final</span><span class="when">{whenstr}</span>'
-            cap=f'Final &middot; <b>{winner} {frac(pe)} &ndash; {frac(pa)}</b> &middot; the gold centre line is 10&frac12;'
+            cap=''
+            headline=f'\n  <p class="hl">{winner} {frac(pe)} &ndash; {frac(pa)}</p>'
             legend=f'<span class="pre">All twenty matches in</span>'
         else:
             stamp=f'<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">{whenstr}</span>'
@@ -432,7 +436,7 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
   <p class="stamp">{stamp}</p>
 </header>
 
-<div class="hero" id="cup">
+<div class="hero" id="cup">{headline}
   <div class="hs">
     <div><div class="hs__t eu">Europe</div><div class="hs__n">{frac(pe)}</div></div>
     <div class="hs__dash">&ndash;</div>
@@ -443,7 +447,7 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
     <div class="bar__a" style="width:{pa_pct:.1f}%"></div>
     <div class="bar__ctr" aria-hidden="true"></div>
   </div>
-  <p class="cap">{cap}</p>
+{('  <p class="cap">' + cap + '</p>') if cap else ''}
 </div>
 
 <div class="legend">{legend}</div>
