@@ -435,7 +435,7 @@ LIVE_RESULTS = {
     15: dict(thru=6, up=0),    # Rusty v Sean Conlon -- A/S thru 6
     12: dict(thru=6, up=+1),   # Ben Caughey v Andy -- Ben 1 up thru 6
     6:  dict(thru=6, up=+2),   # Fintan Flynn v Ray McCarron -- Fintan 2 up thru 6
-    4:  dict(thru=4, up=+2),   # Frank v Marty -- Frank 2 up thru 4
+    4:  dict(thru=6, up=+3),   # Frank v Marty -- Frank 3 up thru 6
     17: dict(thru=6, up=-4),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 4 up thru 6
     3:  dict(thru=3, up=0),    # Lochlann v Leo -- A/S thru 3
     18: dict(thru=3, up=+1),   # Conan v Conor -- Conan 1 up thru 3
@@ -454,8 +454,8 @@ LIVE_SF = {
     'Johnny McCafferty': dict(thru=7, pts=10),  # scratched the 1st and 5th; net eagle 7th
     'Fintan Flynn':      dict(thru=6, pts=12),
     'Ray McCarron':      dict(thru=6, pts=7),   # scratched 5th, 6th
-    'Frank':             dict(thru=4, pts=9),
-    'Marty':             dict(thru=4, pts=7),
+    'Frank':             dict(thru=6, pts=15),
+    'Marty':             dict(thru=6, pts=11),
     'Ronnie Flanagan':   dict(thru=6, pts=4),   # scratched 1st-3rd and 6th
     'Seamus McKiernan':  dict(thru=6, pts=14),
     'Lochlann':          dict(thru=3, pts=7),
