@@ -436,13 +436,13 @@ LIVE_RESULTS = {
     15: dict(thru=15, up=+1),  # Rusty v Sean Conlon -- Rusty 1 up thru 15 (per marker's running column)
     12: dict(done=1, up=+7, res="7&6"),  # Ben Caughey v Andy -- Ben won 7&6
     6:  dict(thru=15, up=0),   # Fintan Flynn v Ray McCarron -- A/S thru 15 (Ray's shot won the 12th, halved the 15th)
-    4:  dict(thru=14, up=+3),  # Frank v Marty -- Frank 3 up thru 14 (Marty birdied the 14th)
+    4:  dict(done=1, up=+4, res="4&3"),  # Frank v Marty -- Frank won 4&3
     17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
     3:  dict(thru=12, up=0),   # Lochlann v Leo -- A/S thru 12 (Lochlann's shot won the 7th; Leo eagled the 11th)
     18: dict(thru=12, up=+2),  # Conan v Conor -- Conan 2 up thru 12 (Conan's shot won the 7th)
     19: dict(thru=13, up=+4),  # Dom v Buff -- Dom 4 up thru 13 (Buff's shot halved the 7th, won the 12th)
-    1:  dict(thru=11, up=-3),  # Ger v Diarmuid King -- Diarmuid 3 up thru 11 (Ger's shot won the 7th)
-    20: dict(thru=11, up=0),   # Johnny McManus v Goof -- A/S thru 11
+    1:  dict(thru=13, up=-3),  # Ger v Diarmuid King -- Diarmuid 3 up thru 13 (Ger's shot won the 7th)
+    20: dict(thru=13, up=+1),  # Johnny McManus v Goof -- Johnny 1 up thru 13
     2:  dict(thru=12, up=+2),  # Shay v Jock -- Shay 2 up thru 12 (Shay's shot won the 7th; Shay eagled the 11th)
     13: dict(thru=10, up=-5),  # Jamie Teague v Ingy -- Ingy 5 up thru 10
     8:  dict(thru=12, up=-3),  # Jonto v Sean McDermott -- Sean 3 up thru 12 (Jonto scratched 5th, 12th; Sean 7th)
@@ -457,8 +457,8 @@ LIVE_SF = {
     'Johnny McCafferty': dict(thru=18, pts=29),   # scratched 1st, 5th
     'Fintan Flynn':      dict(thru=15, pts=26),
     'Ray McCarron':      dict(thru=15, pts=25),   # scratched 5th, 6th
-    'Frank':             dict(thru=14, pts=30),
-    'Marty':             dict(thru=14, pts=25),
+    'Frank':             dict(thru=16, pts=31),
+    'Marty':             dict(thru=16, pts=27),
     'Ronnie Flanagan':   dict(thru=12, pts=8),   # scratched 1-3, 6, 8-10
     'Seamus McKiernan':  dict(thru=12, pts=26),
     'Lochlann':          dict(thru=12, pts=22),
@@ -467,10 +467,10 @@ LIVE_SF = {
     'Conor':             dict(thru=12, pts=13),
     'Dom':               dict(thru=13, pts=16),
     'Buff':              dict(thru=13, pts=3),
-    'Ger':               dict(thru=11, pts=18),
-    'Diarmuid King':     dict(thru=11, pts=21),
-    'Johnny McManus':    dict(thru=11, pts=11),
-    'Goof':              dict(thru=11, pts=13),
+    'Ger':               dict(thru=13, pts=22),
+    'Diarmuid King':     dict(thru=13, pts=25),
+    'Johnny McManus':    dict(thru=13, pts=16),
+    'Goof':              dict(thru=13, pts=15),
     'Shay':              dict(thru=12, pts=26),
     'Jock':              dict(thru=12, pts=22),
     'Jamie Teague':      dict(thru=10, pts=5),
