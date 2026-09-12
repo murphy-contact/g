@@ -430,7 +430,7 @@ LIVE_ON = True
 LIVE_RESULTS = {
     9:  dict(done=1, up=0, res="halved"),  # Govy v Johnny McCafferty -- halved (Govy won 17th and 18th from dormie down)
     5:  dict(thru=15, up=+3),  # Brendy v Raymond McGloin -- Brendy 3 up thru 15, dormie (Brendy's shot halved the 15th)
-    7:  dict(thru=16, up=+2),  # Jamie McCaffrey v Blobby -- Jamie 2 up thru 16, dormie
+    7:  dict(done=1, up=+3, res="3&1"),  # Jamie McCaffrey v Blobby -- Jamie won 3&1
     14: dict(done=1, up=-4, res="4&2"),  # Kealan v Mully -- Mully won 4&2
     16: dict(thru=14, up=-1),  # Hugo v Collie -- Collie 1 up thru 14 (Collie's shot halved the 7th, won the 12th)
     15: dict(thru=15, up=+1),  # Rusty v Sean Conlon -- Rusty 1 up thru 15 (per marker's running column)
@@ -483,8 +483,8 @@ LIVE_SF = {
     'Jimmy':             dict(thru=4, pts=8),
     'Brendy':            dict(thru=15, pts=27),
     'Raymond McGloin':   dict(thru=15, pts=22),
-    'Jamie McCaffrey':   dict(thru=16, pts=23),
-    'Blobby':            dict(thru=16, pts=22),
+    'Jamie McCaffrey':   dict(thru=18, pts=27),
+    'Blobby':            dict(thru=18, pts=26),
     'Kealan':            dict(thru=16, pts=19),   # scratched 6th, 15th
     'Mully':             dict(thru=16, pts=23),
     'Hugo':              dict(thru=14, pts=15),
