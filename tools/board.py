@@ -180,7 +180,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   font-weight:600; letter-spacing:0.08em; margin-top:0.1rem; padding:0; text-transform:uppercase; white-space:nowrap; }
 .rl::after { content:" ▾"; } .rl[aria-expanded="true"]::after { content:" ▴"; }
 .rl:hover, .rl:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
-.rp { color:var(--soft); font-size:1rem; grid-column:1 / -1; line-height:1.5; padding:0.55rem 0.75rem 0.7rem; }
+.rp { color:var(--soft); font-size:1.05rem; grid-column:1 / -1; line-height:1.5; padding:0.6rem 0.75rem 0.75rem; }
 .rp b { color:var(--ink); font-weight:600; }
 .rep p b { color:var(--ink); font-weight:600; }
 .note { color:var(--soft); font-size:0.82rem; padding:0.8rem 1rem 0; }
@@ -362,7 +362,7 @@ SORT_JS = """<script>
 })();
 </script>"""
 
-def build(mode, out, mock, results=None, sf=None, when=None):
+def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
     # scores
     real = results is not None
     pe = pa = 0.0; done_n = live_n = eu_up = us_up = sq_n = 0
@@ -443,14 +443,14 @@ def build(mode, out, mock, results=None, sf=None, when=None):
 
 <div class="cols"><span>Europe</span><b>&nbsp;</b><span class="us">USA</span></div>
 <ul class="board">
-{cup_rows(mode, results, MOCK_REPORTS if mock else None)}
+{cup_rows(mode, results, reports)}
 </ul>
 {cupnote}
 
 {sf_html}
 '''
     HTML += SORT_JS
-    if mock:
+    if reports:
         HTML += REP_JS
     open(out,'w',encoding='utf-8').write(HTML)
     print(f"{out}  mode={mode} mock={mock}  EUR {frac(pe)} v USA {frac(pa)}  {len(HTML)} bytes")
@@ -478,6 +478,27 @@ MOCK_REPORTS = {
     11: "Micky leads Jimmy, the USA captain, <b>2 up after eight</b>. Jimmy won the 1st with a par, then Micky won the 3rd, 4th and 5th. Jimmy&rsquo;s 5 at the 7th, a net 3, won a hole back. Micky&rsquo;s 4 at the 8th restored the two-hole lead and Jimmy has ten holes to find a way back.",
     8:  "Jonto, the Europe captain, leads Sean McDermott <b>1 up after eight</b>. Sean won the 1st and 4th, Jonto the 2nd and 6th. Jonto scratched the 5th, Sean scratched the 7th, and the 8th was halved in sixes. Jonto&rsquo;s one shot is at the 15th and this one looks like going all the way.",
     13: "Jamie Teague and Ingy are <b>all square after seven</b>. Ingy won the 1st with a 5 to a 10 and Teague&rsquo;s 4 at the 2nd squared it. Teague went 1 up at the 4th, Ingy won the 5th and 6th, and Teague&rsquo;s 6 at the 7th, a net 4, levelled it again. Both play off 24 and nobody has led by more than one.",
+}
+
+# Real match write-ups for the live page, keyed by match number. Only finished matches are
+# rendered; add one here when a match is entered as done.
+LIVE_REPORTS = {
+    2:  "Shay beat Jock <b>4&amp;3</b> and turned in the best member card of the day. He was 3 up after seven, his shot winning the 7th, before Jock won the 8th, 9th and 10th on gross to square it. Shay&rsquo;s eagle 3 at the par-5 11th put him back in front and he never looked back, winning the 12th, 14th and 15th. He finished on 37 points with a birdie at the 17th; Jock&rsquo;s birdie at the last gave him 31.",
+    3:  "Leo beat Lochlann <b>1 up</b> on the 18th green in the match of the day. The lead changed hands four times on the front nine, Lochlann&rsquo;s shot winning the 7th and Leo&rsquo;s eagle at the 11th answering it. Leo went 2 up when Lochlann scratched the 15th, Lochlann won the 16th and birdied the 17th to square it, and Leo birdied the last to win. Both men finished on 35 points.",
+    4:  "Frank beat Marty <b>4&amp;3</b> in the low-handicap match. Frank was 5 up after ten holes, his birdie at the 9th the pick of them, with his shot at the 7th halving a hole Marty had won on gross. Marty won the 12th and birdied the 14th to get back to 3 down, but Frank&rsquo;s 7 at the 15th still beat an 8. Frank finished on 35 points, Marty on 34 with a birdie at the last.",
+    5:  "Brendy beat Raymond McGloin <b>3&amp;1</b> and was never behind after the 3rd. Two up at the turn, he lost the 10th, then won the 12th and a par at the 13th made it three. His shot at the 15th halved a hole Raymond had won on gross and left him dormie. Raymond took the 16th, Brendy&rsquo;s par at the 17th closed it. Brendy 32 points, Raymond 28.",
+    6:  "Fintan Flynn beat Ray McCarron <b>1 up</b> at the last after leading by three at the turn. Ray&rsquo;s shot won him the 12th, pars at the 13th and 14th squared it, and his shot at the 15th halved that hole when Fintan had a par. Fintan won the 16th, Ray&rsquo;s par at the 17th levelled it again, and Fintan&rsquo;s par at the 18th won it. Fintan finished on 34 points, Ray on 32.",
+    7:  "Jamie McCaffrey beat Blobby <b>3&amp;1</b>. Level after nine holes of swapping the lead, Jamie went 3 up when Blobby ran up a 10 at the 11th and a 6 at the 12th. Blobby won the 14th and 16th but Jamie won the 15th between them and was dormie with two to play. A 5 to a 6 at the 17th finished it. Jamie 27 points, Blobby 26.",
+    8:  "Sean McDermott beat Jonto, the Europe captain, <b>5&amp;4</b>. Sean&rsquo;s 3 at the 6th, a net eagle, put him 3 up, and though he scratched the 7th the next four holes were halved. Jonto scratched the 5th and the 12th, and Sean&rsquo;s 5s at the 13th and 14th ended it with four to play. Jonto never got to use his one shot at the 15th.",
+    9:  "Govy and Johnny McCafferty <b>halved</b> after one of the day&rsquo;s great escapes. Johnny&rsquo;s shot at the 12th put him ahead and his shot at the 15th saved a half when Govy had a par. A 5 at the 16th made Johnny dormie two up. Govy then won the 17th with an 8 to a 9 and the 18th with a 6 to an 8 to steal the half. Both finished on 29 points.",
+    12: "Ben Caughey beat Andy <b>7&amp;6</b>, the biggest margin of the day. Ben was 4 up at the turn, his shot winning the 7th, then took the 10th, 11th and 12th to end it with six to play. He kept going and finished on 35 points, the best guest card. Andy finished on 23.",
+    13: "Ingy beat Jamie Teague <b>6&amp;4</b>. Teague led once, after the 4th, before Ingy won the 5th, 6th, 7th and 8th in a row and added the 9th, 10th and 11th to go 6 up. Teague won the 12th, the 13th was halved, and Ingy&rsquo;s 6 at the 14th closed it out. Ingy was on 20 points through 16.",
+    14: "Mully beat Kealan <b>4&amp;2</b>. Mully was 3 up after Kealan scratched the 6th, then Kealan&rsquo;s shots at the 7th and 8th won both holes to cut it to one. Mully&rsquo;s 3 at the 10th and 5 at the 11th restored the lead, Kealan&rsquo;s shot won the 12th, and Mully&rsquo;s net 3 at the 14th made it two again. Kealan scratched the 15th and Mully&rsquo;s 6 at the 16th finished it. Mully 26 points, Kealan 23.",
+    15: "Sean Conlon beat Rusty <b>2 up</b> by winning the last three holes. Rusty was 2 up at the turn and 1 up with three to play after his shot won the 15th. Sean&rsquo;s 7 at the 16th squared it, his 7 at the 17th put him ahead, and his 6 at the last sealed it. Both finished on 19 points.",
+    16: "Collie beat Hugo <b>3&amp;1</b>, and his shots did the work. Collie&rsquo;s shot halved the 7th, won the 12th and halved the 15th. Hugo won the 9th, 10th, 13th and 14th on gross but never got level. Collie&rsquo;s 6 at the 16th made him dormie and his 7 at the 17th beat an 8. Hugo 17 points, Collie 18.",
+    17: "Seamus McKiernan beat Ronnie Flanagan <b>7&amp;6</b>. Ronnie scratched seven of the first ten holes, and Seamus&rsquo;s 2 at the 2nd and pars at the 6th, 8th and 9th had him 7 up at the 10th. Ronnie&rsquo;s shots halved the 7th and the 12th, and the 12th ended it. Seamus was on 26 points through 12.",
+    18: "Conan beat Conor <b>3&amp;2</b> in a match neither man led by more than two. Nobody scored at the 1st or 2nd. Conan&rsquo;s shot won the 7th, the lead swapped through the 8th, 9th and 10th, and Conan&rsquo;s 7s at the 11th and 12th put him 2 up. His shot halved the 15th after Conor won the 14th, and his 8 at the 16th beat a 13 to finish it. Conan 19 points, Conor 22.",
+    19: "Dom beat Buff <b>2&amp;1</b>, having been 4 up after eleven and 1 up after sixteen. Buff&rsquo;s shot halved the 7th and won the 12th, and he won the 14th, 15th and 16th on the trot, the 15th on his last shot. Dom&rsquo;s 7 at the 17th against a 10 ended the comeback. Dom 17 points, Buff 6.",
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -558,7 +579,7 @@ LIVE_SF = {
 }
 
 if LIVE_ON:
-    build('live', os.path.join(ROOT, 'live.html'), False, results=LIVE_RESULTS, sf=LIVE_SF)
+    build('live', os.path.join(ROOT, 'live.html'), False, results=LIVE_RESULTS, sf=LIVE_SF, reports=LIVE_REPORTS)
 else:
     build('pre',  os.path.join(ROOT, 'live.html'), False)
-build('live', os.path.join(ROOT, 'mock.html'), True)
+build('live', os.path.join(ROOT, 'mock.html'), True, reports=MOCK_REPORTS)
