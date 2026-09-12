@@ -442,7 +442,7 @@ LIVE_RESULTS = {
     18: dict(thru=6, up=0),    # Conan v Conor -- A/S thru 6
     19: dict(thru=6, up=+2),   # Dom v Buff -- Dom 2 up thru 6
     1:  dict(thru=5, up=-4),   # Ger v Diarmuid King -- Diarmuid 4 up thru 5
-    20: dict(thru=7, up=-3),   # Johnny McManus v Goof -- Goof 3 up thru 7 (5th read as 10 v 10, halved)
+    20: dict(thru=7, up=-2),   # Johnny McManus v Goof -- Goof 2 up thru 7 (5th confirmed Johnny 7, Goof 10)
     2:  dict(thru=6, up=+2),   # Shay v Jock -- Shay 2 up thru 6
     13: dict(thru=6, up=-1),   # Jamie Teague v Ingy -- Ingy 1 up thru 6
     8:  dict(thru=6, up=-3),   # Jonto v Sean McDermott -- Sean 3 up thru 6 (Jonto scratched 5th)
@@ -469,7 +469,7 @@ LIVE_SF = {
     'Buff':              dict(thru=6, pts=3),
     'Ger':               dict(thru=5, pts=6),
     'Diarmuid King':     dict(thru=5, pts=10),
-    'Johnny McManus':    dict(thru=7, pts=3),
+    'Johnny McManus':    dict(thru=7, pts=4),
     'Goof':              dict(thru=7, pts=9),
     'Shay':              dict(thru=6, pts=15),
     'Jock':              dict(thru=6, pts=11),
