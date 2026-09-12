@@ -169,6 +169,8 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .st--done { color:var(--ink); } .st--halved { color:#a9871a; } .st--tee { color:var(--soft); }
 .st--f { color:var(--ink); letter-spacing:0.06em; }
 
+.rep { color:var(--soft); font-size:0.82rem; grid-column:1 / -1; line-height:1.45; padding:0.45rem 0.75rem 0.6rem; }
+.rep b { color:var(--ink); font-weight:600; }
 .note { color:var(--soft); font-size:0.82rem; padding:0.8rem 1rem 0; }
 .note b { color:var(--ink); font-weight:600; }
 
@@ -212,7 +214,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .sr--spoon .sr__i::after { content:" \\1F944"; }
 '''
 
-def cup_rows(mode, results=None):
+def cup_rows(mode, results=None, reports=None):
     rows = []
     for tee, no, hn, hh, hg, an, ah, ag, s in M:
         st = s if results is None else results.get(no)
@@ -241,11 +243,12 @@ f'''    <li class="row">
             hmarg = marg() if (hlead or up==0) else ""
             amarg = marg() if (alead or up==0) else ""
             hcls=" lead" if hlead else ""; acls=" lead" if alead else ""
+        rep = f'\n      <p class="rep">{reports[no]}</p>' if reports and no in reports else ''
         rows.append(
 f'''    <li class="row">
       <div class="side side--h{hcls}"><span class="marg">{hmarg}</span><span class="nm">{e(hn)}</span></div>
       <div class="mid"><span class="mno">{no}</span>{mid}</div>
-      <div class="side side--a{acls}"><span class="nm">{e(an)}</span><span class="marg">{amarg}</span></div>
+      <div class="side side--a{acls}"><span class="nm">{e(an)}</span><span class="marg">{amarg}</span></div>{rep}
     </li>''')
     return "\n".join(rows)
 
@@ -408,7 +411,7 @@ def build(mode, out, mock, results=None, sf=None, when=None):
 
 <div class="cols"><span>Europe</span><b>&nbsp;</b><span class="us">USA</span></div>
 <ul class="board">
-{cup_rows(mode, results)}
+{cup_rows(mode, results, MOCK_REPORTS if mock else None)}
 </ul>
 {cupnote}
 
@@ -417,6 +420,31 @@ def build(mode, out, mock, results=None, sf=None, when=None):
     HTML += SORT_JS
     open(out,'w',encoding='utf-8').write(HTML)
     print(f"{out}  mode={mode} mock={mock}  EUR {frac(pe)} v USA {frac(pa)}  {len(HTML)} bytes")
+
+# Example match write-ups for the mock page. Four or five sentences each, matching the mock
+# states above. The live page does not use these.
+MOCK_REPORTS = {
+    9:  "Johnny McCafferty took this one <b>2&amp;1</b> and never trailed after the turn. Govy won the 2nd and 4th to lead early, but Johnny&rsquo;s shot at the 7th squared it and his 4 at the 8th put him ahead. A scratched 10th from Govy made it two, and the pair traded halves down the back nine. Johnny&rsquo;s shot at the 15th saved a half when Govy had a par, and a 5 at the 17th closed it out.",
+    5:  "Brendy beat Raymond McGloin <b>3&amp;2</b> in the day&rsquo;s tidiest match. Level after six, Brendy won the 7th, 8th and 10th with three pars in four holes. Raymond pulled one back at the 12th but bogeyed the 13th and 14th to go three down. A half at the 16th was all Brendy needed, and both cards finished well into the thirties.",
+    7:  "Jamie McCaffrey and Blobby played off the same mark and finished exactly where they started, <b>all square</b>. Jamie led twice on the front nine and Blobby squared it each time within a hole. Blobby went 1 up at the 14th, Jamie birdied the 16th to level, and neither man blinked over the last two. Half a point each, and the fairest result on the board.",
+    14: "Kealan used his eight shots to great effect and beat Mully <b>4&amp;3</b>. Mully led after a scrappy first three, then Kealan&rsquo;s shots at the 6th, 7th and 8th turned a deficit into a two-hole lead. A net birdie at the 12th made it three and Mully&rsquo;s double at the 14th ended it. Kealan scratched the 15th and 18th but by then it did not matter.",
+    12: "Andy edged Ben Caughey <b>1 up</b> in a match that turned on the last three holes. Ben, a guest off 24, led by two after nine and was still 1 up standing on the 16th tee. Andy won the 16th with a par, halved the 17th, and holed from six feet for a 4 at the last to win it. Ben had the better Stableford card and the worse afternoon.",
+    15: "Rusty beat Sean Conlon <b>2&amp;1</b> with a back nine he will talk about for a while. Sean led by two after five, but Rusty won the 8th and 9th to square it at the turn. Pars at the 12th and 14th put Rusty two ahead, and his shot at the 15th halved a hole Sean had won on gross. A halved 17th finished it.",
+    4:  "Frank leads Marty <b>1 up with two to play</b> in the low-handicap match of the day. Marty was 2 up after four before Frank won three in a row from the 5th. Marty&rsquo;s birdie at the 11th squared it and Frank&rsquo;s shot at the 15th put him back ahead. Both have played the back nine in level par gross, and the 17th will decide whether Frank is dormie.",
+    16: "Collie is <b>2 up with two to play</b> on Hugo and needs only a half to win. Collie&rsquo;s four shots have been the story: one halved the 7th, one won the 12th and one halved the 15th. Hugo won the 13th and 14th to get within one but a double at the 16th cost him. Collie is dormie and Hugo has to win both remaining holes to halve.",
+    6:  "Fintan Flynn and Ray McCarron are <b>all square with three to play</b>. Fintan was 3 up after nine, then Ray won the 12th on his shot and the 13th and 14th on gross. Ray&rsquo;s shot at the 15th halved that hole when Fintan had a par. This is a guests&rsquo; match and it will be decided on the 18th green.",
+    17: "Ronnie Flanagan leads Seamus McKiernan <b>3 up with four to play</b>. Seamus won the 1st and 2nd, then Ronnie&rsquo;s six shots kicked in: three of them won holes outright between the 6th and the 12th. Seamus birdied the 13th to get one back and Ronnie replied with a net birdie at the 14th. A half at the 15th makes Ronnie dormie.",
+    3:  "Leo is <b>1 up on Lochlann with five to play</b>. The pair traded the lead four times on the front nine, with Lochlann&rsquo;s shot winning the 7th and Leo&rsquo;s eagle at the 11th putting him ahead. Lochlann squared it at the 12th with his second shot of the day. Leo&rsquo;s par at the 13th restored his lead and Lochlann still has a shot to come at the 15th.",
+    18: "Conan leads Conor <b>2 up with five to play</b> in the highest-scoring match on the course. Neither man scored at the 1st or 2nd. Conan&rsquo;s shot at the 7th won it, Conor took the 8th and 10th, and Conan won the 11th, 12th and 13th in a row. Conan has one more shot at the 15th.",
+    2:  "Shay and Jock are <b>all square with six to play</b>. Shay was 3 up after seven, with his shot winning the 7th, before Jock won the 8th, 9th and 10th on gross. Shay&rsquo;s eagle at the 11th put him back ahead and Jock&rsquo;s birdie at the 12th squared it again. Shay&rsquo;s last shot comes at the 15th.",
+    19: "Buff leads Dom <b>2 up with seven to play</b>, which nobody predicted after the front nine. Dom was 3 up at the turn. Buff&rsquo;s shot halved the 7th and won the 12th, and he has won the 9th, 10th and 11th on gross too. Buff has one shot left, at the 15th, and Dom has not scored a point since the 5th.",
+    1:  "Ger leads Diarmuid King <b>1 up with eight to play</b>. Diarmuid went 3 up with pars at the 2nd, 3rd and 4th. Ger&rsquo;s shot won the 7th, his par won the 8th, and his birdie at the 10th squared it. Ger took the lead with a 4 at the par-5 11th, and his second shot is at the 15th.",
+    20: "Johnny McManus and Goof are <b>all square with eight to play</b>. Goof was 3 up after seven, winning four holes to Johnny&rsquo;s one. Johnny won the 8th, 9th and 10th in a row, the 10th with a net 2. Both men get two shots on every hole, so every hole is live.",
+    10: "Caolan Swift leads Ryan McDermott <b>1 up at the turn</b>. Ryan was 2 up after four. Caolan won the 5th, and her par at the 7th, helped by a shot, gave her the lead. Ryan squared it at the 8th and Caolan won the 9th with a 5 to Ryan&rsquo;s 6.",
+    11: "Micky leads Jimmy, the USA captain, <b>2 up after eight</b>. Jimmy won the 1st with a par, then Micky won the 3rd, 4th and 5th. Jimmy&rsquo;s 5 at the 7th, a net 3, won a hole back. Micky&rsquo;s 4 at the 8th restored the two-hole lead and Jimmy has ten holes to find a way back.",
+    8:  "Jonto, the Europe captain, leads Sean McDermott <b>1 up after eight</b>. Sean won the 1st and 4th, Jonto the 2nd and 6th. Jonto scratched the 5th, Sean scratched the 7th, and the 8th was halved in sixes. Jonto&rsquo;s one shot is at the 15th and this one looks like going all the way.",
+    13: "Jamie Teague and Ingy are <b>all square after seven</b>. Ingy won the 1st with a 5 to a 10 and Teague&rsquo;s 4 at the 2nd squared it. Teague went 1 up at the 4th, Ingy won the 5th and 6th, and Teague&rsquo;s 6 at the 7th, a net 4, levelled it again. Both play off 24 and nobody has led by more than one.",
+}
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
