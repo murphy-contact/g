@@ -502,7 +502,7 @@ LIVE_RESULTS = {
     17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
     3:  dict(done=1, up=-1, res="1 up"),  # Lochlann v Leo -- Leo won 1 up (won the 18th)
     18: dict(done=1, up=+3, res="3&2"),  # Conan v Conor -- Conan won 3&2 (Conan's shots won 7th, halved 15th)
-    19: dict(thru=16, up=+1),  # Dom v Buff -- Dom 1 up thru 16 (Buff won 14th, 15th, 16th)
+    19: dict(done=1, up=+2, res="2&1"),  # Dom v Buff -- Dom won 2&1 (Buff won 14th-16th; Buff's shots halved 7th, won 12th and 15th)
     1:  dict(thru=16, up=0),   # Ger v Diarmuid King -- A/S thru 16 (Ger's shots won the 7th and 15th; Ger won 14th-16th)
     20: dict(thru=15, up=+1),  # Johnny McManus v Goof -- Johnny 1 up thru 15
     2:  dict(done=1, up=+4, res="4&3"),  # Shay v Jock -- Shay won 4&3
@@ -527,8 +527,8 @@ LIVE_SF = {
     'Leo':               dict(thru=18, pts=35),
     'Conan':             dict(thru=18, pts=19),
     'Conor':             dict(thru=18, pts=22),   # scratched 17th
-    'Dom':               dict(thru=16, pts=16),
-    'Buff':              dict(thru=16, pts=6),
+    'Dom':               dict(thru=18, pts=17),
+    'Buff':              dict(thru=18, pts=6),
     'Ger':               dict(thru=16, pts=28),
     'Diarmuid King':     dict(thru=16, pts=27),
     'Johnny McManus':    dict(thru=15, pts=19),
