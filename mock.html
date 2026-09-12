@@ -110,6 +110,12 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .rep summary::after { content:"▾"; } .rep[open] summary::after { content:"▴"; }
 .rep summary:hover, .rep summary:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
 .rep p { color:var(--soft); font-size:0.9rem; line-height:1.45; margin-top:0.4rem; }
+.rl { background:none; border:0; color:var(--home); cursor:pointer; font-family:var(--display); font-size:0.62rem;
+  font-weight:600; letter-spacing:0.08em; margin-top:0.1rem; padding:0; text-transform:uppercase; white-space:nowrap; }
+.rl::after { content:" ▾"; } .rl[aria-expanded="true"]::after { content:" ▴"; }
+.rl:hover, .rl:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
+.rp { color:var(--soft); font-size:0.9rem; grid-column:1 / -1; line-height:1.45; padding:0.45rem 0.75rem 0.6rem; }
+.rp b { color:var(--ink); font-weight:600; }
 .rep p b { color:var(--ink); font-weight:600; }
 .note { color:var(--soft); font-size:0.82rem; padding:0.8rem 1rem 0; }
 .note b { color:var(--ink); font-weight:600; }
@@ -181,39 +187,39 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 <ul class="board">
     <li class="row">
       <div class="side side--h done"><span class="marg"></span><span class="nm">Govy</span></div>
-      <div class="mid"><span class="mno">9</span><span class="st st--f">F</span></div>
+      <div class="mid"><span class="mno">9</span><span class="st st--f">F</span><button class="rl" type="button" aria-expanded="false" aria-controls="rep-9">Report</button></div>
       <div class="side side--a done win"><span class="nm">Johnny McCafferty</span><span class="marg">2&1</span></div>
-      <details class="rep"><summary>Match report</summary><p>Johnny McCafferty took this one <b>2&amp;1</b> and never trailed after the turn. Govy won the 2nd and 4th to lead early, but Johnny&rsquo;s shot at the 7th squared it and his 4 at the 8th put him ahead. A scratched 10th from Govy made it two, and the pair traded halves down the back nine. Johnny&rsquo;s shot at the 15th saved a half when Govy had a par, and a 5 at the 17th closed it out.</p></details>
+      <p class="rp" id="rep-9" hidden>Johnny McCafferty took this one <b>2&amp;1</b> and never trailed after the turn. Govy won the 2nd and 4th to lead early, but Johnny&rsquo;s shot at the 7th squared it and his 4 at the 8th put him ahead. A scratched 10th from Govy made it two, and the pair traded halves down the back nine. Johnny&rsquo;s shot at the 15th saved a half when Govy had a par, and a 5 at the 17th closed it out.</p>
     </li>
     <li class="row">
       <div class="side side--h done win"><span class="marg">3&2</span><span class="nm">Brendy</span></div>
-      <div class="mid"><span class="mno">5</span><span class="st st--f">F</span></div>
+      <div class="mid"><span class="mno">5</span><span class="st st--f">F</span><button class="rl" type="button" aria-expanded="false" aria-controls="rep-5">Report</button></div>
       <div class="side side--a done"><span class="nm">Raymond McGloin</span><span class="marg"></span></div>
-      <details class="rep"><summary>Match report</summary><p>Brendy beat Raymond McGloin <b>3&amp;2</b> in the day&rsquo;s tidiest match. Level after six, Brendy won the 7th, 8th and 10th with three pars in four holes. Raymond pulled one back at the 12th but bogeyed the 13th and 14th to go three down. A half at the 16th was all Brendy needed, and both cards finished well into the thirties.</p></details>
+      <p class="rp" id="rep-5" hidden>Brendy beat Raymond McGloin <b>3&amp;2</b> in the day&rsquo;s tidiest match. Level after six, Brendy won the 7th, 8th and 10th with three pars in four holes. Raymond pulled one back at the 12th but bogeyed the 13th and 14th to go three down. A half at the 16th was all Brendy needed, and both cards finished well into the thirties.</p>
     </li>
     <li class="row">
       <div class="side side--h done half"><span class="marg">A/S</span><span class="nm">Jamie McCaffrey</span></div>
-      <div class="mid"><span class="mno">7</span><span class="st st--f">F</span></div>
+      <div class="mid"><span class="mno">7</span><span class="st st--f">F</span><button class="rl" type="button" aria-expanded="false" aria-controls="rep-7">Report</button></div>
       <div class="side side--a done half"><span class="nm">Blobby</span><span class="marg">A/S</span></div>
-      <details class="rep"><summary>Match report</summary><p>Jamie McCaffrey and Blobby played off the same mark and finished exactly where they started, <b>all square</b>. Jamie led twice on the front nine and Blobby squared it each time within a hole. Blobby went 1 up at the 14th, Jamie birdied the 16th to level, and neither man blinked over the last two. Half a point each, and the fairest result on the board.</p></details>
+      <p class="rp" id="rep-7" hidden>Jamie McCaffrey and Blobby played off the same mark and finished exactly where they started, <b>all square</b>. Jamie led twice on the front nine and Blobby squared it each time within a hole. Blobby went 1 up at the 14th, Jamie birdied the 16th to level, and neither man blinked over the last two. Half a point each, and the fairest result on the board.</p>
     </li>
     <li class="row">
       <div class="side side--h done win"><span class="marg">4&3</span><span class="nm">Kealan</span></div>
-      <div class="mid"><span class="mno">14</span><span class="st st--f">F</span></div>
+      <div class="mid"><span class="mno">14</span><span class="st st--f">F</span><button class="rl" type="button" aria-expanded="false" aria-controls="rep-14">Report</button></div>
       <div class="side side--a done"><span class="nm">Mully</span><span class="marg"></span></div>
-      <details class="rep"><summary>Match report</summary><p>Kealan used his eight shots to great effect and beat Mully <b>4&amp;3</b>. Mully led after a scrappy first three, then Kealan&rsquo;s shots at the 6th, 7th and 8th turned a deficit into a two-hole lead. A net birdie at the 12th made it three and Mully&rsquo;s double at the 14th ended it. Kealan scratched the 15th and 18th but by then it did not matter.</p></details>
+      <p class="rp" id="rep-14" hidden>Kealan used his eight shots to great effect and beat Mully <b>4&amp;3</b>. Mully led after a scrappy first three, then Kealan&rsquo;s shots at the 6th, 7th and 8th turned a deficit into a two-hole lead. A net birdie at the 12th made it three and Mully&rsquo;s double at the 14th ended it. Kealan scratched the 15th and 18th but by then it did not matter.</p>
     </li>
     <li class="row">
       <div class="side side--h done"><span class="marg"></span><span class="nm">Ben Caughey</span></div>
-      <div class="mid"><span class="mno">12</span><span class="st st--f">F</span></div>
+      <div class="mid"><span class="mno">12</span><span class="st st--f">F</span><button class="rl" type="button" aria-expanded="false" aria-controls="rep-12">Report</button></div>
       <div class="side side--a done win"><span class="nm">Andy</span><span class="marg">1 up</span></div>
-      <details class="rep"><summary>Match report</summary><p>Andy edged Ben Caughey <b>1 up</b> in a match that turned on the last three holes. Ben, a guest off 24, led by two after nine and was still 1 up standing on the 16th tee. Andy won the 16th with a par, halved the 17th, and holed from six feet for a 4 at the last to win it. Ben had the better Stableford card and the worse afternoon.</p></details>
+      <p class="rp" id="rep-12" hidden>Andy edged Ben Caughey <b>1 up</b> in a match that turned on the last three holes. Ben, a guest off 24, led by two after nine and was still 1 up standing on the 16th tee. Andy won the 16th with a par, halved the 17th, and holed from six feet for a 4 at the last to win it. Ben had the better Stableford card and the worse afternoon.</p>
     </li>
     <li class="row">
       <div class="side side--h done win"><span class="marg">2&1</span><span class="nm">Rusty</span></div>
-      <div class="mid"><span class="mno">15</span><span class="st st--f">F</span></div>
+      <div class="mid"><span class="mno">15</span><span class="st st--f">F</span><button class="rl" type="button" aria-expanded="false" aria-controls="rep-15">Report</button></div>
       <div class="side side--a done"><span class="nm">Sean Conlon</span><span class="marg"></span></div>
-      <details class="rep"><summary>Match report</summary><p>Rusty beat Sean Conlon <b>2&amp;1</b> with a back nine he will talk about for a while. Sean led by two after five, but Rusty won the 8th and 9th to square it at the turn. Pars at the 12th and 14th put Rusty two ahead, and his shot at the 15th halved a hole Sean had won on gross. A halved 17th finished it.</p></details>
+      <p class="rp" id="rep-15" hidden>Rusty beat Sean Conlon <b>2&amp;1</b> with a back nine he will talk about for a while. Sean led by two after five, but Rusty won the 8th and 9th to square it at the turn. Pars at the 12th and 14th put Rusty two ahead, and his shot at the 15th halved a hole Sean had won on gross. A halved 17th finished it.</p>
     </li>
     <li class="row">
       <div class="side side--h lead"><span class="marg">1 Up</span><span class="nm">Frank</span></div>
@@ -390,5 +396,18 @@ comparable.</p>
     });
   });
   apply();
+})();
+</script>
+<script>
+(function () {
+  document.querySelectorAll('.rl').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = document.getElementById(b.getAttribute('aria-controls'));
+      if (!p) return;
+      var open = p.hidden;
+      p.hidden = !open;
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
 })();
 </script>

@@ -176,6 +176,12 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .rep summary::after { content:"▾"; } .rep[open] summary::after { content:"▴"; }
 .rep summary:hover, .rep summary:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
 .rep p { color:var(--soft); font-size:0.9rem; line-height:1.45; margin-top:0.4rem; }
+.rl { background:none; border:0; color:var(--home); cursor:pointer; font-family:var(--display); font-size:0.62rem;
+  font-weight:600; letter-spacing:0.08em; margin-top:0.1rem; padding:0; text-transform:uppercase; white-space:nowrap; }
+.rl::after { content:" ▾"; } .rl[aria-expanded="true"]::after { content:" ▴"; }
+.rl:hover, .rl:focus-visible { text-decoration:underline; text-underline-offset:0.15em; }
+.rp { color:var(--soft); font-size:0.9rem; grid-column:1 / -1; line-height:1.45; padding:0.45rem 0.75rem 0.6rem; }
+.rp b { color:var(--ink); font-weight:600; }
 .rep p b { color:var(--ink); font-weight:600; }
 .note { color:var(--soft); font-size:0.82rem; padding:0.8rem 1rem 0; }
 .note b { color:var(--ink); font-weight:600; }
@@ -220,6 +226,22 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .sr--spoon .sr__i::after { content:" \\1F944"; }
 '''
 
+REP_JS = """
+<script>
+(function () {
+  document.querySelectorAll('.rl').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = document.getElementById(b.getAttribute('aria-controls'));
+      if (!p) return;
+      var open = p.hidden;
+      p.hidden = !open;
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script>
+"""
+
 def cup_rows(mode, results=None, reports=None):
     rows = []
     for tee, no, hn, hh, hg, an, ah, ag, s in M:
@@ -249,8 +271,13 @@ f'''    <li class="row">
             hmarg = marg() if (hlead or up==0) else ""
             amarg = marg() if (alead or up==0) else ""
             hcls=" lead" if hlead else ""; acls=" lead" if alead else ""
-        rep = (f'\n      <details class="rep"><summary>Match report</summary><p>{reports[no]}</p></details>'
-               if reports and no in reports else '')
+        rep = ''
+        if reports and no in reports:
+            if done:
+                mid += f'<button class="rl" type="button" aria-expanded="false" aria-controls="rep-{no}">Report</button>'
+                rep = f'\n      <p class="rp" id="rep-{no}" hidden>{reports[no]}</p>'
+            else:
+                rep = f'\n      <details class="rep"><summary>Match report</summary><p>{reports[no]}</p></details>'
         rows.append(
 f'''    <li class="row">
       <div class="side side--h{hcls}"><span class="marg">{hmarg}</span><span class="nm">{e(hn)}</span></div>
@@ -425,6 +452,8 @@ def build(mode, out, mock, results=None, sf=None, when=None):
 {sf_html}
 '''
     HTML += SORT_JS
+    if mock:
+        HTML += REP_JS
     open(out,'w',encoding='utf-8').write(HTML)
     print(f"{out}  mode={mode} mock={mock}  EUR {frac(pe)} v USA {frac(pa)}  {len(HTML)} bytes")
 
