@@ -428,7 +428,7 @@ LIVE_ON = True
 # up > 0 Europe ahead, up < 0 USA ahead, 0 all square.
 # match no -> dict(thru=N, up=U) in progress, or dict(done=1, up=U, res="3&2") finished.
 LIVE_RESULTS = {
-    9:  dict(thru=7, up=+2),   # Govy v Johnny McCafferty -- Govy 2 up thru 7
+    9:  dict(thru=9, up=+1),   # Govy v Johnny McCafferty -- Govy 1 up thru 9
     5:  dict(thru=6, up=+1),   # Brendy v Raymond McGloin -- Brendy 1 up thru 6
     7:  dict(thru=8, up=+2),   # Jamie McCaffrey v Blobby -- Jamie 2 up thru 8
     14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6
@@ -445,7 +445,7 @@ LIVE_RESULTS = {
     20: dict(thru=2, up=0),    # Johnny McManus v Goof -- A/S thru 2
     2:  dict(thru=3, up=+2),   # Shay v Jock -- Shay 2 up thru 3
     13: dict(thru=2, up=0),    # Jamie Teague v Ingy -- A/S thru 2
-    8:  dict(thru=2, up=0),    # Jonto v Sean McDermott -- A/S thru 2 (Sean 1st, Jonto 2nd)
+    8:  dict(thru=3, up=0),    # Jonto v Sean McDermott -- A/S thru 3
     10: dict(thru=4, up=+2),   # Ryan McDermott v Caolan Swift -- Ryan 2 up thru 4
     11: dict(thru=4, up=+1),   # Micky v Jimmy -- Micky 1 up thru 4
 }
@@ -453,8 +453,8 @@ LIVE_RESULTS = {
 # player name (exactly as in M) -> dict(thru=holes played, pts=net Stableford points so far),
 # computed off each player's full handicap on the Yellow stroke index. Missing = no card yet.
 LIVE_SF = {
-    'Govy':              dict(thru=7, pts=12),
-    'Johnny McCafferty': dict(thru=7, pts=10),  # scratched the 1st and 5th; net eagle 7th
+    'Govy':              dict(thru=9, pts=14),
+    'Johnny McCafferty': dict(thru=9, pts=13),  # scratched the 1st and 5th; net eagle 7th
     'Fintan Flynn':      dict(thru=6, pts=12),
     'Ray McCarron':      dict(thru=6, pts=7),   # scratched 5th, 6th
     'Frank':             dict(thru=6, pts=15),
@@ -475,8 +475,8 @@ LIVE_SF = {
     'Jock':              dict(thru=3, pts=5),
     'Jamie Teague':      dict(thru=2, pts=2),
     'Ingy':              dict(thru=2, pts=3),
-    'Jonto':             dict(thru=2, pts=1),
-    'Sean McDermott':    dict(thru=2, pts=0),
+    'Jonto':             dict(thru=3, pts=4),
+    'Sean McDermott':    dict(thru=3, pts=3),
     'Ryan McDermott':    dict(thru=4, pts=10),
     'Caolan Swift':      dict(thru=4, pts=8),
     'Micky':             dict(thru=4, pts=7),
