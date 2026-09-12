@@ -427,14 +427,14 @@ LIVE_ON = True
 LIVE_RESULTS = {
     9:  dict(thru=5, up=+2),   # Govy v Johnny McCafferty -- Govy 2 up thru 5
     6:  dict(thru=3, up=+1),   # Fintan Flynn v Ray McCarron -- Fintan 1 up thru 3
-    4:  dict(thru=2, up=+2),   # Frank v Marty -- Frank 2 up thru 2
+    4:  dict(thru=4, up=+1),   # Frank v Marty -- Frank 1 up thru 4
     17: dict(thru=3, up=-3),   # Ronnie Flanagan v Seamus McKiernan -- Seamus 3 up thru 3 (Ronnie scratched 1-3)
     3:  dict(thru=3, up=0),    # Lochlann v Leo -- A/S thru 3
     18: dict(thru=3, up=+3),   # Conan v Conor -- Conan 3 up thru 3
     5:  dict(thru=6, up=+1),   # Brendy v Raymond McGloin -- Brendy 1 up thru 6
-    7:  dict(thru=4, up=-1),   # Jamie McCaffrey v Blobby -- Blobby 1 up thru 4
-    14: dict(thru=4, up=-1),   # Kealan v Mully -- Mully 1 up thru 4
-    16: dict(thru=2, up=-2),   # Hugo v Collie -- Collie 2 up thru 2
+    7:  dict(thru=6, up=0),    # Jamie McCaffrey v Blobby -- A/S thru 6
+    14: dict(thru=6, up=-3),   # Kealan v Mully -- Mully 3 up thru 6 (Kealan scratched 6th)
+    16: dict(thru=4, up=-2),   # Hugo v Collie -- Collie 2 up thru 4
     15: dict(thru=3, up=+1),   # Rusty v Sean Conlon -- Rusty 1 up thru 3
     12: dict(thru=3, up=-1),   # Ben Caughey v Andy -- Andy 1 up thru 3
 }
@@ -446,8 +446,8 @@ LIVE_SF = {
     'Johnny McCafferty': dict(thru=5, pts=5),   # scratched the 1st and 5th
     'Fintan Flynn':      dict(thru=3, pts=5),
     'Ray McCarron':      dict(thru=3, pts=5),
-    'Frank':             dict(thru=2, pts=5),
-    'Marty':             dict(thru=2, pts=3),
+    'Frank':             dict(thru=4, pts=9),
+    'Marty':             dict(thru=4, pts=7),
     'Ronnie Flanagan':   dict(thru=3, pts=0),   # scratched 1st-3rd
     'Seamus McKiernan':  dict(thru=3, pts=8),
     'Lochlann':          dict(thru=3, pts=7),
@@ -456,12 +456,12 @@ LIVE_SF = {
     'Conor':             dict(thru=3, pts=2),
     'Brendy':            dict(thru=6, pts=11),
     'Raymond McGloin':   dict(thru=6, pts=10),
-    'Jamie McCaffrey':   dict(thru=4, pts=6),
-    'Blobby':            dict(thru=4, pts=8),
-    'Kealan':            dict(thru=4, pts=5),
-    'Mully':             dict(thru=4, pts=3),
-    'Hugo':              dict(thru=2, pts=0),
-    'Collie':            dict(thru=2, pts=3),
+    'Jamie McCaffrey':   dict(thru=6, pts=8),
+    'Blobby':            dict(thru=6, pts=8),
+    'Kealan':            dict(thru=6, pts=6),   # scratched 6th
+    'Mully':             dict(thru=6, pts=7),
+    'Hugo':              dict(thru=4, pts=3),
+    'Collie':            dict(thru=4, pts=7),
     'Rusty':             dict(thru=3, pts=3),
     'Sean Conlon':       dict(thru=3, pts=2),
     'Ben Caughey':       dict(thru=3, pts=6),
