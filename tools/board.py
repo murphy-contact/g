@@ -501,8 +501,8 @@ LIVE_SF = {
     'Goof':              dict(thru=15, pts=19),
     'Shay':              dict(thru=15, pts=31),
     'Jock':              dict(thru=15, pts=25),
-    'Jamie Teague':      dict(thru=14, pts=9),
-    'Ingy':              dict(thru=14, pts=20),
+    'Jamie Teague':      dict(thru=16, pts=10),
+    'Ingy':              dict(thru=16, pts=20),
     'Jonto':             dict(thru=14, pts=13),   # scratched 5th, 12th
     'Sean McDermott':    dict(thru=14, pts=20),   # scratched 7th
     'Ryan McDermott':    dict(thru=14, pts=19),
