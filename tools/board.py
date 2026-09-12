@@ -431,7 +431,7 @@ LIVE_RESULTS = {
     9:  dict(thru=14, up=-1),  # Govy v Johnny McCafferty -- Johnny 1 up thru 14 (14th confirmed Govy 7, Johnny 6)
     5:  dict(thru=12, up=+2),  # Brendy v Raymond McGloin -- Brendy 2 up thru 12
     7:  dict(thru=14, up=+2),  # Jamie McCaffrey v Blobby -- Jamie 2 up thru 14
-    14: dict(thru=12, up=-2),  # Kealan v Mully -- Mully 2 up thru 12 (Kealan's shot won the 12th; Kealan scratched 6th)
+    14: dict(thru=14, up=-2),  # Kealan v Mully -- Mully 2 up thru 14 (Kealan's shot won the 12th; Kealan scratched 6th)
     16: dict(thru=10, up=-1),  # Hugo v Collie -- Collie 1 up thru 10
     15: dict(thru=12, up=0),   # Rusty v Sean Conlon -- A/S thru 12 (per marker's running column)
     12: dict(done=1, up=+7, res="7&6"),  # Ben Caughey v Andy -- Ben won 7&6
@@ -485,8 +485,8 @@ LIVE_SF = {
     'Raymond McGloin':   dict(thru=12, pts=18),
     'Jamie McCaffrey':   dict(thru=14, pts=20),
     'Blobby':            dict(thru=14, pts=19),
-    'Kealan':            dict(thru=12, pts=17),   # scratched 6th
-    'Mully':             dict(thru=12, pts=17),
+    'Kealan':            dict(thru=14, pts=19),   # scratched 6th
+    'Mully':             dict(thru=14, pts=20),
     'Hugo':              dict(thru=10, pts=9),
     'Collie':            dict(thru=10, pts=11),
     'Rusty':             dict(thru=12, pts=12),
