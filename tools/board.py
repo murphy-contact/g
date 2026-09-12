@@ -47,12 +47,9 @@ def build_players():
         ps.append(dict(name=an, hcp=ah, guest=ag, team="us", thru=thru))
     return ps
 
-def score_stableford(ps):
-    rng = random.Random(91221)
+def rank_stableford(ps):
     for p in ps:
-        rate = min(2.6, max(1.0, rng.gauss(1.92, 0.42)))   # net Stableford points/hole
-        p["pts"] = max(0, round(p["thru"] * rate))
-        p["proj"] = round(p["pts"] * 18 / p["thru"])
+        p["proj"] = round(p["pts"] * 18 / p["thru"]) if p["thru"] else 0
     ps.sort(key=lambda p: (-p["proj"], -p["pts"], p["name"]))
     # medals to members, spoon to lowest member
     mr = 0
@@ -64,8 +61,15 @@ def score_stableford(ps):
             if mr <= 3:
                 p["medal"] = mr
     for p in ps:
-        p["spoon"] = (not p["guest"] and p is members[-1])
+        p["spoon"] = bool(members) and (not p["guest"]) and (p is members[-1])
     return ps
+
+def score_stableford(ps):
+    rng = random.Random(91221)
+    for p in ps:
+        rate = min(2.6, max(1.0, rng.gauss(1.92, 0.42)))   # net Stableford points/hole
+        p["pts"] = max(0, round(p["thru"] * rate))
+    return rank_stableford(ps)
 
 CSS = '''
 :root {
@@ -133,7 +137,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .cap b { color:var(--gold); font-weight:700; }
 
 .legend { align-items:center; background:var(--sunk); border-bottom:1px solid var(--hair);
-  color:var(--soft); display:flex; font-family:var(--display); font-size:0.7rem; gap:0.9rem;
+  color:var(--soft); display:flex; flex-wrap:wrap; font-family:var(--display); font-size:0.7rem; gap:0.3rem 0.9rem;
   justify-content:center; letter-spacing:0.1em; padding:0.4rem 1rem; text-transform:uppercase; }
 .legend b { align-items:center; display:inline-flex; font-weight:600; gap:0.3rem; }
 .legend .pre { letter-spacing:0.1em; }
@@ -245,10 +249,18 @@ f'''    <li class="row">
     </li>''')
     return "\n".join(rows)
 
-def stableford_section(mode):
+def stableford_section(mode, live_sf=None):
     if mode == 'pre':
         return '<div class="head" id="stableford"><h2>The Stableford</h2><p>Individual net</p></div>'
-    ps = score_stableford(build_players())
+    ps = build_players()
+    if live_sf is not None:
+        ps = [p for p in ps if p["name"] in live_sf]
+        for p in ps:
+            p["thru"] = live_sf[p["name"]]["thru"]
+            p["pts"] = live_sf[p["name"]]["pts"]
+        ps = rank_stableford(ps)
+    else:
+        ps = score_stableford(ps)
     rows = []
     for i, p in enumerate(ps, 1):
         cls = ""
@@ -268,7 +280,7 @@ f'''<span class="sr__j">{p['pts']}</span><span class="sr__f">{p['proj']}</span><
 </ol>
 <p class="note"><b>Proj</b> stretches each card to eighteen holes at its current rate and the table is
 ranked on it, highest first &mdash; groups are at different holes, so points-so-far are not yet
-comparable.</p>'''
+comparable.{(' <b>' + str(len(ps)) + ' of 40</b> players on the board so far.') if live_sf is not None else ''}</p>'''
 
 
 SORT_JS = """<script>
@@ -315,10 +327,10 @@ SORT_JS = """<script>
 })();
 </script>"""
 
-def build(mode, out, mock, results=None, sf=True, when=None):
+def build(mode, out, mock, results=None, sf=None, when=None):
     # scores
     real = results is not None
-    pe = pa = 0.0; done_n = 0
+    pe = pa = 0.0; done_n = live_n = eu_up = us_up = sq_n = 0
     for row in M:
         no_ = row[1]; ts = row[8]
         st = ts if results is None else results.get(no_)
@@ -329,11 +341,12 @@ def build(mode, out, mock, results=None, sf=True, when=None):
             elif u<0: pa+=1
             else: pe+=.5; pa+=.5
         elif st:                         # in-progress matches project at their current standing
+            live_n += 1
             u = st["up"]
-            if u>0: pe+=1
-            elif u<0: pa+=1
-            else: pe+=.5; pa+=.5
-    out_n = 20 - done_n
+            if u>0: pe+=1; eu_up+=1
+            elif u<0: pa+=1; us_up+=1
+            else: pe+=.5; pa+=.5; sq_n+=1
+    out_n = live_n                       # matches actually out on the course
     if mode=='pre': pe=pa=0.0
     TARGET=10.5; tick=TARGET/20*100; tickU=100-tick
     pe_pct=pe/20*100; pa_pct=pa/20*100
@@ -347,14 +360,19 @@ def build(mode, out, mock, results=None, sf=True, when=None):
         whenstr = when or ('Saturday, September 12th &middot; 5:34 PM' if mock else stamp_full())
         stamp=f'<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">{whenstr}</span>'
         cap='Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b>'
-        legend=('<b><span class="chip eu"></span>Europe up</b><b><span class="chip us"></span>USA up</b>'
+        legend=(f'<b><span class="chip eu"></span>Europe up {eu_up}</b>'
+                f'<b><span class="chip us"></span>USA up {us_up}</b>'
+                f'<span>A/S {sq_n}</span>'
                 f'<span>{done_n} in &middot; {out_n} out</span>')
         note=''
 
     state = 'live' if mode=='live' else 'pre'
     mockbar = ('<div class="mock"><b>Example board</b> &middot; sample scores, not a real result</div>' if mock else '')
     cupnote = f'<p class="note">{note}</p>' if note else ''
-    sf_html = stableford_section('pre') if (real and not sf) else stableford_section(mode)
+    if real:
+        sf_html = stableford_section(mode, live_sf=sf) if sf else stableford_section('pre')
+    else:
+        sf_html = stableford_section(mode)
 
     HTML=f'''<title>Captain&rsquo;s Day &mdash; {'Example' if mock else 'Live'} Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -413,8 +431,21 @@ LIVE_RESULTS = {
     14: dict(thru=2, up=0),    # Kealan v Mully -- A/S thru 2
 }
 
+# player name (exactly as in M) -> dict(thru=holes played, pts=net Stableford points so far),
+# computed off each player's full handicap on the Yellow stroke index. Missing = no card yet.
+LIVE_SF = {
+    'Govy':              dict(thru=2, pts=4),
+    'Johnny McCafferty': dict(thru=2, pts=3),   # scratched the 1st
+    'Brendy':            dict(thru=3, pts=6),
+    'Raymond McGloin':   dict(thru=3, pts=6),
+    'Jamie McCaffrey':   dict(thru=2, pts=4),
+    'Blobby':            dict(thru=2, pts=2),
+    'Kealan':            dict(thru=2, pts=2),
+    'Mully':             dict(thru=2, pts=0),
+}
+
 if LIVE_ON:
-    build('live', os.path.join(ROOT, 'live.html'), False, results=LIVE_RESULTS, sf=False)
+    build('live', os.path.join(ROOT, 'live.html'), False, results=LIVE_RESULTS, sf=LIVE_SF)
 else:
     build('pre',  os.path.join(ROOT, 'live.html'), False)
 build('live', os.path.join(ROOT, 'mock.html'), True)

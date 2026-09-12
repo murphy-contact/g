@@ -71,7 +71,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 .cap b { color:var(--gold); font-weight:700; }
 
 .legend { align-items:center; background:var(--sunk); border-bottom:1px solid var(--hair);
-  color:var(--soft); display:flex; font-family:var(--display); font-size:0.7rem; gap:0.9rem;
+  color:var(--soft); display:flex; flex-wrap:wrap; font-family:var(--display); font-size:0.7rem; gap:0.3rem 0.9rem;
   justify-content:center; letter-spacing:0.1em; padding:0.4rem 1rem; text-transform:uppercase; }
 .legend b { align-items:center; display:inline-flex; font-weight:600; gap:0.3rem; }
 .legend .pre { letter-spacing:0.1em; }
@@ -150,7 +150,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 <header class="top">
   <h1>Captain&rsquo;s Day &mdash; Live</h1>
   <p class="sub"><a href="#cup">Singles Matchplay</a> &middot; <a href="#stableford">Stableford</a></p>
-  <p class="stamp"><span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">Saturday, September 12th &middot; 3:21 PM</span></p>
+  <p class="stamp"><span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">Saturday, September 12th &middot; 3:31 PM</span></p>
 </header>
 
 <div class="hero" id="cup">
@@ -167,7 +167,7 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
   <p class="cap">Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b></p>
 </div>
 
-<div class="legend"><b><span class="chip eu"></span>Europe up</b><b><span class="chip us"></span>USA up</b><span>0 in &middot; 20 out</span></div>
+<div class="legend"><b><span class="chip eu"></span>Europe up 1</b><b><span class="chip us"></span>USA up 0</b><span>A/S 3</span><span>0 in &middot; 4 out</span></div>
 
 <div class="cols"><span>Europe</span><b>&nbsp;</b><span class="us">USA</span></div>
 <ul class="board">
@@ -275,6 +275,20 @@ p { margin:0; } ul,ol { list-style:none; margin:0; padding:0; }
 
 
 <div class="head" id="stableford"><h2>The Stableford</h2><p>Individual net</p></div>
+<div class="sh"><button type="button" class="sh__k" data-k="rank" aria-label="Sort by position">#</button><button type="button" class="sh__k pl" data-k="name">Player</button><button type="button" class="sh__k" data-k="thru">Thru</button><button type="button" class="sh__k b" data-k="pts">Pts</button><button type="button" class="sh__k" data-k="proj">Proj</button></div>
+<ol class="sp">
+    <li class="sr sr--1" data-rank="1" data-name="Brendy" data-thru="3" data-pts="6" data-proj="36"><span class="sr__i">1</span><span class="sr__p"><span class="sr__dot eu"></span><span class="sr__n">Brendy</span></span><span class="sr__f">3</span><span class="sr__j">6</span><span class="sr__f">36</span></li>
+    <li class="sr" data-rank="2" data-name="Raymond McGloin" data-thru="3" data-pts="6" data-proj="36"><span class="sr__i">2</span><span class="sr__p"><span class="sr__dot us"></span><span class="sr__n">Raymond McGloin</span><span class="sr__g">Guest</span></span><span class="sr__f">3</span><span class="sr__j">6</span><span class="sr__f">36</span></li>
+    <li class="sr sr--2" data-rank="3" data-name="Govy" data-thru="2" data-pts="4" data-proj="36"><span class="sr__i">3</span><span class="sr__p"><span class="sr__dot eu"></span><span class="sr__n">Govy</span></span><span class="sr__f">2</span><span class="sr__j">4</span><span class="sr__f">36</span></li>
+    <li class="sr sr--2" data-rank="4" data-name="Jamie McCaffrey" data-thru="2" data-pts="4" data-proj="36"><span class="sr__i">4</span><span class="sr__p"><span class="sr__dot eu"></span><span class="sr__n">Jamie McCaffrey</span></span><span class="sr__f">2</span><span class="sr__j">4</span><span class="sr__f">36</span></li>
+    <li class="sr" data-rank="5" data-name="Johnny McCafferty" data-thru="2" data-pts="3" data-proj="27"><span class="sr__i">5</span><span class="sr__p"><span class="sr__dot us"></span><span class="sr__n">Johnny McCafferty</span></span><span class="sr__f">2</span><span class="sr__j">3</span><span class="sr__f">27</span></li>
+    <li class="sr" data-rank="6" data-name="Blobby" data-thru="2" data-pts="2" data-proj="18"><span class="sr__i">6</span><span class="sr__p"><span class="sr__dot us"></span><span class="sr__n">Blobby</span></span><span class="sr__f">2</span><span class="sr__j">2</span><span class="sr__f">18</span></li>
+    <li class="sr" data-rank="7" data-name="Kealan" data-thru="2" data-pts="2" data-proj="18"><span class="sr__i">7</span><span class="sr__p"><span class="sr__dot eu"></span><span class="sr__n">Kealan</span></span><span class="sr__f">2</span><span class="sr__j">2</span><span class="sr__f">18</span></li>
+    <li class="sr sr--spoon" data-rank="8" data-name="Mully" data-thru="2" data-pts="0" data-proj="0"><span class="sr__i">8</span><span class="sr__p"><span class="sr__dot us"></span><span class="sr__n">Mully</span></span><span class="sr__f">2</span><span class="sr__j">0</span><span class="sr__f">0</span></li>
+</ol>
+<p class="note"><b>Proj</b> stretches each card to eighteen holes at its current rate and the table is
+ranked on it, highest first &mdash; groups are at different holes, so points-so-far are not yet
+comparable. <b>8 of 40</b> players on the board so far.</p>
 <script>
 (function () {
   var sp = document.querySelector('.sp');
