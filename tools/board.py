@@ -485,8 +485,8 @@ LIVE_SF = {
     'Raymond McGloin':   dict(thru=15, pts=22),
     'Jamie McCaffrey':   dict(thru=18, pts=27),
     'Blobby':            dict(thru=18, pts=26),
-    'Kealan':            dict(thru=16, pts=19),   # scratched 6th, 15th
-    'Mully':             dict(thru=16, pts=23),
+    'Kealan':            dict(thru=18, pts=23),   # scratched 6th, 15th
+    'Mully':             dict(thru=18, pts=26),
     'Hugo':              dict(thru=14, pts=15),
     'Collie':            dict(thru=14, pts=14),
     'Rusty':             dict(thru=15, pts=18),
