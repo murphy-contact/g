@@ -393,12 +393,19 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
         note='This board goes live when the first match tees off at <b>2:30 PM Saturday</b>.'
     else:
         whenstr = when or ('Saturday, September 12th &middot; 5:34 PM' if mock else stamp_full())
-        stamp=f'<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">{whenstr}</span>'
-        cap='Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b>'
-        legend=(f'<b><span class="chip eu"></span>Europe up {eu_up}</b>'
-                f'<b><span class="chip us"></span>USA up {us_up}</b>'
-                f'<span>A/S {sq_n}</span>'
-                f'<span>{done_n} in &middot; {out_n} out</span>')
+        final = (not mock) and out_n == 0
+        if final:
+            winner = 'Europe win the Cup' if pe > pa else ('USA win the Cup' if pa > pe else 'The Cup is tied')
+            stamp=f'<span class="dot dot--pre" aria-hidden="true"></span><span>Final</span><span class="when">{whenstr}</span>'
+            cap=f'Final &middot; <b>{winner} {frac(pe)} &ndash; {frac(pa)}</b> &middot; the gold centre line is 10&frac12;'
+            legend=f'<span class="pre">All twenty matches in</span>'
+        else:
+            stamp=f'<span class="dot" aria-hidden="true"></span><span>Live</span><span class="when">{whenstr}</span>'
+            cap='Projected now &middot; lead past the gold centre line &mdash; <b>10&frac12; of 20 wins</b>'
+            legend=(f'<b><span class="chip eu"></span>Europe up {eu_up}</b>'
+                    f'<b><span class="chip us"></span>USA up {us_up}</b>'
+                    f'<span>A/S {sq_n}</span>'
+                    f'<span>{done_n} in &middot; {out_n} out</span>')
         note=''
 
     state = 'live' if mode=='live' else 'pre'
