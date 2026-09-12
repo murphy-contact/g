@@ -447,7 +447,7 @@ LIVE_RESULTS = {
     13: dict(thru=8, up=-3),   # Jamie Teague v Ingy -- Ingy 3 up thru 8
     8:  dict(thru=6, up=-3),   # Jonto v Sean McDermott -- Sean 3 up thru 6 (Jonto scratched 5th)
     10: dict(thru=4, up=+2),   # Ryan McDermott v Caolan Swift -- Ryan 2 up thru 4
-    11: dict(thru=4, up=+1),   # Micky v Jimmy -- Micky 1 up thru 4
+    11: dict(thru=9, up=-1),   # Ryan McDermott v Caolan Swift -- Caolan 1 up thru 9
 }
 
 # player name (exactly as in M) -> dict(thru=holes played, pts=net Stableford points so far),
@@ -477,8 +477,8 @@ LIVE_SF = {
     'Ingy':              dict(thru=8, pts=12),
     'Jonto':             dict(thru=6, pts=7),   # scratched 5th
     'Sean McDermott':    dict(thru=6, pts=11),
-    'Ryan McDermott':    dict(thru=4, pts=10),
-    'Caolan Swift':      dict(thru=4, pts=8),
+    'Ryan McDermott':    dict(thru=9, pts=16),
+    'Caolan Swift':      dict(thru=9, pts=18),
     'Micky':             dict(thru=4, pts=7),
     'Jimmy':             dict(thru=4, pts=8),
     'Brendy':            dict(thru=12, pts=22),
