@@ -441,7 +441,7 @@ LIVE_RESULTS = {
     3:  dict(thru=12, up=0),   # Lochlann v Leo -- A/S thru 12 (Lochlann's shot won the 7th; Leo eagled the 11th)
     18: dict(thru=12, up=+2),  # Conan v Conor -- Conan 2 up thru 12 (Conan's shot won the 7th)
     19: dict(thru=11, up=+4),  # Dom v Buff -- Dom 4 up thru 11 (Buff's shot halved the 7th)
-    1:  dict(thru=8, up=-4),   # Ger v Diarmuid King -- Diarmuid 4 up thru 8 (Ger's shot won the 7th)
+    1:  dict(thru=11, up=-3),  # Ger v Diarmuid King -- Diarmuid 3 up thru 11 (Ger's shot won the 7th)
     20: dict(thru=7, up=-2),   # Johnny McManus v Goof -- Goof 2 up thru 7 (5th confirmed Johnny 7, Goof 10)
     2:  dict(thru=9, up=+1),   # Shay v Jock -- Shay 1 up thru 9 (Shay's shot won the 7th)
     13: dict(thru=10, up=-5),  # Jamie Teague v Ingy -- Ingy 5 up thru 10
@@ -467,8 +467,8 @@ LIVE_SF = {
     'Conor':             dict(thru=12, pts=13),
     'Dom':               dict(thru=11, pts=13),
     'Buff':              dict(thru=11, pts=3),
-    'Ger':               dict(thru=8, pts=13),
-    'Diarmuid King':     dict(thru=8, pts=17),
+    'Ger':               dict(thru=11, pts=18),
+    'Diarmuid King':     dict(thru=11, pts=21),
     'Johnny McManus':    dict(thru=7, pts=4),
     'Goof':              dict(thru=7, pts=9),
     'Shay':              dict(thru=9, pts=19),
