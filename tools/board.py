@@ -484,7 +484,7 @@ MOCK_REPORTS = {
 # rendered; add one here when a match is entered as done.
 LIVE_REPORTS = {
     2:  "Shay beat Jock <b>4&amp;3</b> and turned in the best member card of the day. He was 3 up after seven, his shot winning the 7th, before Jock won the 8th, 9th and 10th on gross to square it. Shay&rsquo;s eagle 3 at the par-5 11th put him back in front and he never looked back, winning the 12th, 14th and 15th. He finished on 37 points with a birdie at the 17th; Jock&rsquo;s birdie at the last gave him 31.",
-    3:  "Lochlann and Leo <b>halved</b> the match of the day. The lead changed hands four times on the front nine, Lochlann&rsquo;s shot winning the 7th and Leo&rsquo;s eagle at the 11th answering it. Leo went 2 up when Lochlann scratched the 15th, then Lochlann won the 16th and birdied the 17th to square it. Leo took 5 at the last against Lochlann&rsquo;s 4, so it finished all square. Lochlann 35 points, Leo 33.",
+    3:  "Lochlann beat Leo <b>1 up</b> in the match of the day, winning the last three holes. The lead changed hands four times on the front nine, Lochlann&rsquo;s shot winning the 7th and Leo&rsquo;s eagle at the 11th answering it. Leo went 2 up when Lochlann scratched the 15th. Lochlann won the 16th, birdied the 17th to square it, and his 4 at the last beat Leo&rsquo;s 5. Lochlann 35 points, Leo 33.",
     4:  "Frank beat Marty <b>4&amp;3</b> in the low-handicap match. Frank was 5 up after ten holes, his birdie at the 9th the pick of them, with his shot at the 7th halving a hole Marty had won on gross. Marty won the 12th and birdied the 14th to get back to 3 down, but Frank&rsquo;s 7 at the 15th still beat an 8. Frank finished on 35 points, Marty on 34 with a birdie at the last.",
     5:  "Brendy beat Raymond <b>3&amp;1</b> and was never behind after the 3rd. Two up at the turn, he lost the 10th, then won the 12th and a par at the 13th made it three. His shot at the 15th halved a hole Raymond had won on gross and left him dormie. Raymond took the 16th, Brendy&rsquo;s par at the 17th closed it. Brendy 32 points, Raymond 28.",
     6:  "Fintan beat Ray <b>1 up</b> at the last after leading by three at the turn. Ray&rsquo;s shot won him the 12th, pars at the 13th and 14th squared it, and his shot at the 15th halved that hole when Fintan had a par. Fintan won the 16th, Ray&rsquo;s par at the 17th levelled it again, and Fintan&rsquo;s par at the 18th won it. Fintan finished on 34 points, Ray on 32.",
@@ -522,7 +522,7 @@ LIVE_RESULTS = {
     6:  dict(done=1, up=+1, res="1 up"),  # Fintan Flynn v Ray McCarron -- Fintan won 1 up (won the 18th)
     4:  dict(done=1, up=+4, res="4&3"),  # Frank v Marty -- Frank won 4&3
     17: dict(done=1, up=-7, res="7&6"),  # Ronnie Flanagan v Seamus McKiernan -- Seamus won 7&6
-    3:  dict(done=1, up=0, res="halved"),  # Lochlann v Leo -- halved (Leo 5 at the 18th, Lochlann won it to square)
+    3:  dict(done=1, up=+1, res="1 up"),  # Lochlann v Leo -- Lochlann won 1 up (birdied 17th to square, won 18th 4 v 5)
     18: dict(done=1, up=+3, res="3&2"),  # Conan v Conor -- Conan won 3&2 (Conan's shots won 7th, halved 15th)
     19: dict(done=1, up=+2, res="2&1"),  # Dom v Buff -- Dom won 2&1 (Buff won 14th-16th; Buff's shots halved 7th, won 12th and 15th)
     1:  dict(thru=16, up=0),   # Ger v Diarmuid King -- A/S thru 16 (Ger's shots won the 7th and 15th; Ger won 14th-16th)
