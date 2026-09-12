@@ -499,6 +499,7 @@ LIVE_REPORTS = {
     17: "Seamus beat Ronnie <b>7&amp;6</b>. Ronnie scratched seven of the first ten holes, and Seamus&rsquo;s 2 at the 2nd and pars at the 6th, 8th and 9th had him 7 up at the 10th. Ronnie&rsquo;s shots halved the 7th and the 12th, and the 12th ended it. Seamus was on 26 points through 12.",
     18: "Conan beat Conor <b>3&amp;2</b> in a match neither man led by more than two. Nobody scored at the 1st or 2nd. Conan&rsquo;s shot won the 7th, the lead swapped through the 8th, 9th and 10th, and Conan&rsquo;s 7s at the 11th and 12th put him 2 up. His shot halved the 15th after Conor won the 14th, and his 8 at the 16th beat a 13 to finish it. Conan 19 points, Conor 22.",
     19: "Dom beat Buff <b>2&amp;1</b>, having been 4 up after eleven and 1 up after sixteen. Buff&rsquo;s shot halved the 7th and won the 12th, and he won the 14th, 15th and 16th on the trot, the 15th on his last shot. Dom&rsquo;s 7 at the 17th against a 10 ended the comeback. Dom 17 points, Buff 6.",
+    20: "Goof beat Johnny <b>2 up</b> by winning the last three holes. Goof was 3 up after seven, Johnny won the 8th, 9th and 10th to square it, and Johnny was 1 up with three to play after taking the 15th. Goof&rsquo;s 7 at the 16th squared it, his 5 at the 17th put him ahead, and his 6 at the last won it. Both play off 36, so every hole carried two shots each. Goof 26 points, Johnny 21.",
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -525,7 +526,7 @@ LIVE_RESULTS = {
     18: dict(done=1, up=+3, res="3&2"),  # Conan v Conor -- Conan won 3&2 (Conan's shots won 7th, halved 15th)
     19: dict(done=1, up=+2, res="2&1"),  # Dom v Buff -- Dom won 2&1 (Buff won 14th-16th; Buff's shots halved 7th, won 12th and 15th)
     1:  dict(thru=16, up=0),   # Ger v Diarmuid King -- A/S thru 16 (Ger's shots won the 7th and 15th; Ger won 14th-16th)
-    20: dict(thru=15, up=+1),  # Johnny McManus v Goof -- Johnny 1 up thru 15
+    20: dict(done=1, up=-2, res="2 up"),  # Johnny McManus v Goof -- Goof won 2 up (won 16th, 17th, 18th)
     2:  dict(done=1, up=+4, res="4&3"),  # Shay v Jock -- Shay won 4&3
     13: dict(done=1, up=-6, res="6&4"),  # Jamie Teague v Ingy -- Ingy won 6&4
     8:  dict(done=1, up=-5, res="5&4"),  # Jonto v Sean McDermott -- Sean won 5&4
@@ -552,8 +553,8 @@ LIVE_SF = {
     'Buff':              dict(thru=18, pts=6),
     'Ger':               dict(thru=16, pts=28),
     'Diarmuid King':     dict(thru=16, pts=27),
-    'Johnny McManus':    dict(thru=15, pts=19),
-    'Goof':              dict(thru=15, pts=19),
+    'Johnny McManus':    dict(thru=18, pts=21),
+    'Goof':              dict(thru=18, pts=26),
     'Shay':              dict(thru=18, pts=37),
     'Jock':              dict(thru=18, pts=31),
     'Jamie Teague':      dict(thru=16, pts=10),
