@@ -414,9 +414,10 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
         note=''
 
     state = 'final' if (mode=='live' and not mock and out_n == 0) else ('live' if mode=='live' else 'pre')
-    mockbar = ('<div class="mock"><b>Example board</b> &middot; sample scores, not a real result</div>' if mock else '')
+    mockbar = (('<div class="mock"><b>Snapshot</b> &middot; the live board as it stood at 3:21 PM Saturday</div>' if results is not None
+                else '<div class="mock"><b>Example board</b> &middot; sample scores, not a real result</div>') if mock else '')
     cupnote = f'<p class="note">{note}</p>' if note else ''
-    if real:
+    if real or results is not None:
         sf_html = stableford_section(mode, live_sf=sf) if sf else stableford_section('pre')
     else:
         sf_html = stableford_section(mode)
@@ -517,6 +518,16 @@ LIVE_REPORTS = {
     20: "Goof beat Johnny <b>2 up</b> by winning the last three holes. Goof was 3 up after seven, Johnny won the 8th, 9th and 10th to square it, and Johnny was 1 up with three to play after taking the 15th. Goof&rsquo;s 7 at the 16th squared it, his 5 at the 17th put him ahead, and his 6 at the last won it. Both play off 36, so every hole carried two shots each. Goof 26 points, Johnny 21.",
 }
 
+# The live board as it stood at 3:21 PM Irish time (10:21 AM in Canada), the first four
+# groups reporting and no Stableford cards yet. The mock page now shows this snapshot.
+SNAP_WHEN = 'Saturday, September 12th &middot; 3:21 PM'
+SNAP_RESULTS = {
+    9:  dict(thru=2, up=0),    # Govy v Johnny McCafferty -- A/S thru 2
+    5:  dict(thru=3, up=0),    # Brendy v Raymond McGloin -- A/S thru 3
+    7:  dict(thru=2, up=+1),   # Jamie McCaffrey v Blobby -- Jamie 1 up thru 2
+    14: dict(thru=2, up=0),    # Kealan v Mully -- A/S thru 2
+}
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ---- day-of controls: flip LIVE_ON to True on the first card, edit LIVE_RESULTS as cards come in ----
@@ -596,4 +607,4 @@ if LIVE_ON:
     build('live', os.path.join(ROOT, 'live.html'), False, results=LIVE_RESULTS, sf=LIVE_SF, reports=LIVE_REPORTS)
 else:
     build('pre',  os.path.join(ROOT, 'live.html'), False)
-build('live', os.path.join(ROOT, 'mock.html'), True, reports=MOCK_REPORTS)
+build('live', os.path.join(ROOT, 'mock.html'), True, results=SNAP_RESULTS, when=SNAP_WHEN)
