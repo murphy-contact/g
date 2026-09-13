@@ -413,7 +413,7 @@ def build(mode, out, mock, results=None, sf=None, when=None, reports=None):
                     f'<span>{done_n} in &middot; {out_n} out</span>')
         note=''
 
-    state = 'live' if mode=='live' else 'pre'
+    state = 'final' if (mode=='live' and not mock and out_n == 0) else ('live' if mode=='live' else 'pre')
     mockbar = ('<div class="mock"><b>Example board</b> &middot; sample scores, not a real result</div>' if mock else '')
     cupnote = f'<p class="note">{note}</p>' if note else ''
     if real:
